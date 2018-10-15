@@ -12,9 +12,9 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <h2>Lead Lifecycle Designer</h2>
+            <h2>Welcome! Please Login.</h2>
             <LoginForm />
-            <Link to="/register">Register</Link>
+            <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
         </div>
     );
 }
