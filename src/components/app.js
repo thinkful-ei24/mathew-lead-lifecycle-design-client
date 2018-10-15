@@ -6,50 +6,23 @@ import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
+
 import {refreshAuthToken} from '../actions/auth';
 import {clearAuth} from '../actions/auth';
-import {clearAuthToken} from '../local-storage';
+import {clearAuthToken} from '../utils/local-storage';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
             // When we are logged in, refresh the auth token periodically
             this.startPeriodicRefresh();
-            //setTimeout to log out
-            this.logOutTimeoutRefresh();
+            
         } else if (prevProps.loggedIn && !this.props.loggedIn) {
             // Stop refreshing when we log out
             this.stopPeriodicRefresh();
         }
     }
 
-    logOutTimeoutRefresh() {
-
-        function promiseTimeout (time) {
-            return new Promise(function(resolve,reject){
-              setTimeout(() => {
-                  resolve(time);
-                },time);
-            });
-          };
-        
-        function confirm() {
-            const warning = window.confirm('You will be logged out in 1 minute, press okay to stay logged in, press cancel to delete system32');
-            return warning;
-        }
-
-        promiseTimeout(3000)
-        .then(() => {if (confirm()) {
-            this.logOutTimeoutRefresh();
-            } else {
-                this.timeoutInterval = setTimeout(
-                () => {this.props.dispatch(clearAuth())
-                clearAuthToken()},
-                2000 //5 secs
-                )
-            }
-        })
-    }
 
     componentWillUnmount() {
         this.stopPeriodicRefresh();

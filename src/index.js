@@ -4,9 +4,9 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './store';
 //TODO REMOVE
-import CheeseList from './components/cheese-list';
+//import CheeseList from './components/cheese-list';
 import './index.css';
-import App from './App';
+import App from './components/app';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -21,7 +21,7 @@ const cheeses = [
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-          <CheeseList />
+          <App />
     </Router>
   </Provider>,
    document.getElementById('root'));
