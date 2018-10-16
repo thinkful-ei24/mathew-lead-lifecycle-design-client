@@ -13,7 +13,11 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
               <NavBar />
-              <p>This is text</p>
+              <section className="container">
+                <section className="workArea">
+                  <p>This is text</p>
+                </section>
+              </section>
             </div>
         );
     }
