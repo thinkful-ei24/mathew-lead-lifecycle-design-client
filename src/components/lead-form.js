@@ -3,13 +3,20 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {createLead} from '../actions/leads';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
-const passwordLength = length({min: 10, max: 72});
-const matchesPassword = matches('password');
+// const passwordLength = length({min: 10, max: 72});
+// const matchesPassword = matches('password');
+
+const renderField = (field) => {
+ return (<div className="input-row">
+  <input {...field.input} type="text"/>
+  {field.meta.touched && field.meta.error && 
+    <span className="error">{field.meta.error}</span>}
+  </div>)
+}
 
 export class CreateLead extends React.Component {
     onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
+        const user = {...values};
         return this.props
             .dispatch(createLead(user))
             // .then(() => this.props.dispatch(login(username, password)));
@@ -22,9 +29,10 @@ export class CreateLead extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+
                 <label htmlFor="firstName">First Name</label>
                 <Field 
-                  component={Input} 
+                  component={renderField} 
                   type="text" 
                   name="firstName" 
                   validate={[required, nonEmpty, isTrimmed]}
@@ -32,30 +40,30 @@ export class CreateLead extends React.Component {
 
                 <label htmlFor="lastName">Last Name</label>
                 <Field 
-                  component={Input} 
+                  component={renderField} 
                   type="text" 
                   name="lastName" 
                   validate={[required, nonEmpty, isTrimmed]} 
                 />
 
-                <label htmlFor="mobileNumber">Mobile #</label>
+                <label htmlFor="mobilePhoneNumber">Mobile #</label>
                 <Field
-                  component={Input}
+                  component={renderField}
                   type="text"
-                  name="mobileNumber"
+                  name="mobilePhoneNumber"
                   validate={[required, nonEmpty, isTrimmed]}
                 />
 
                 <label htmlFor="homeNumber">Home #</label>
                 <Field
-                  component={Input}
+                  component={renderField}
                   type="text"
                   name="homeNumber"
                 />
                 
                 <label htmlFor="emailAddress">Email Address</label>
                 <Field
-                  component={Input}
+                  component={renderField}
                   type="text"
                   name="emailAddress"
                 />
@@ -69,6 +77,7 @@ export class CreateLead extends React.Component {
                   cols="25"
                 />
 <br />
+{this.props.error && <strong>{this.props.error}</strong>}
                 <button
                   type="submit"
                   disabled={this.props.pristine || this.props.submitting}>

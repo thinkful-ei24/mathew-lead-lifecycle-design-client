@@ -2,13 +2,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
-import { fetchCheeses } from '../actions/cheese';
+// import { fetchCheeses } from '../actions/cheese';
 
 
 
 export class CheeseList extends React.Component {
   componentDidMount(prevProps) {
-    this.props.dispatch(fetchCheeses());
+    // this.props.dispatch(fetchCheeses());
   }
 
   render() {

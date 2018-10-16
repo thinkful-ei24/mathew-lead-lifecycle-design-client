@@ -4,11 +4,11 @@ import {
   AUTH_REQUEST,
   AUTH_SUCCESS,
   AUTH_ERROR
-} from '../actions/auth';
+} from '../actions/leads';
 
 const initialState = {
-  authToken: null, // authToken !== null does not mean it has been validated
-  currentUser: null,
+  createLead: false,
+  leadBeingViewed: null,
   loading: false,
   error: null
 };

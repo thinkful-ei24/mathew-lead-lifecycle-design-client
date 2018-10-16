@@ -9,7 +9,7 @@ export const normalizeResponseErrors = res => {
           res.headers.has('content-type') &&
           res.headers.get('content-type').startsWith('application/json')
       ) {
-          // It's a nice JSON error returned by us, so decode it
+          // It's a nice JSON error returned by our server, so decode it
           return res.json().then(err => Promise.reject(err));
       }
       // It's a less informative error returned by express
