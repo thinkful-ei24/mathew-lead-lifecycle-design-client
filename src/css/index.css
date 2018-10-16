@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #5a82a1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.header-bar {
+  background-color: #c6d4df;
+  padding-top: 1px;
+  padding-left: 10px;
+  padding-bottom: 1px;
+}
+
+.home {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  /* border: 2px red solid; */
+  justify-content: center;
+}
+
+.loginBox, .registrationBox {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  min-height: 340px;
+  min-width: 309px;
+  margin-top: 100px;
+}
+
+.loginBox, .registrationBox
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.loginBox:before, .loginBox:after, .registrationBox:before, .registrationBox:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.loginBox:after, .registrationBox:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  
+}
+
+.home p {
+  font-size: 80%;
+}
+
+.home h2 {
+  margin-bottom: 37px;
+}
+
+.form-error {
+  color: red;
+  font-style: italic;
+}
+
+.home input {
+  margin-bottom: 17px;
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 1px;
+  width: 100px;
+  height: 40px;
+  background-color: #5a82a1;
+  color: white;
+  font-size: 120%;
+}
+
