@@ -8,8 +8,8 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 
 import {refreshAuthToken} from '../actions/auth';
-import {clearAuth} from '../actions/auth';
-import {clearAuthToken} from '../utils/local-storage';
+// import {clearAuth} from '../actions/auth';
+// import {clearAuthToken} from '../utils/local-storage';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -22,7 +22,6 @@ export class App extends React.Component {
             this.stopPeriodicRefresh();
         }
     }
-
 
     componentWillUnmount() {
         this.stopPeriodicRefresh();
