@@ -59,7 +59,6 @@ const mapStateToProps = state => ({
     hasAuthToken: state.auth.authToken !== null,
     loggedIn: state.auth.currentUser !== null,
     createLead: state.auth.createLead !== null,
-    leadBeingViewed: null
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
