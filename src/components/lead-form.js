@@ -1,10 +1,8 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {createLead} from '../actions/leads';
-import Input from './input';
+//import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
-// const passwordLength = length({min: 10, max: 72});
-// const matchesPassword = matches('password');
 
 const renderField = (field) => {
  return (<div className="input-row">
@@ -29,7 +27,8 @@ export class CreateLead extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-
+                {this.props.error && <strong>{this.props.error}</strong>}
+                <br />
                 <label htmlFor="firstName">First Name</label>
                 <Field 
                   component={renderField} 
@@ -46,7 +45,7 @@ export class CreateLead extends React.Component {
                   validate={[required, nonEmpty, isTrimmed]} 
                 />
 
-                <label htmlFor="mobilePhoneNumber">Mobile #</label>
+                <label htmlFor="mobilePhoneNumbergit ">Mobile #</label>
                 <Field
                   component={renderField}
                   type="text"
@@ -58,7 +57,7 @@ export class CreateLead extends React.Component {
                 <Field
                   component={renderField}
                   type="text"
-                  name="homeNumber"
+                  name="homePhoneNumber"
                 />
                 
                 <label htmlFor="emailAddress">Email Address</label>
@@ -77,7 +76,7 @@ export class CreateLead extends React.Component {
                   cols="25"
                 />
 <br />
-{this.props.error && <strong>{this.props.error}</strong>}
+
                 <button
                   type="submit"
                   disabled={this.props.pristine || this.props.submitting}>

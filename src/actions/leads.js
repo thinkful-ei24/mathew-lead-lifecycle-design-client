@@ -22,7 +22,8 @@ export const createLeadError = error => ({
 
 export const createLead = lead => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/api/leads`, {
+  console.log(lead)
+    return fetch(`${API_BASE_URL}/api/leads/`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -35,6 +36,7 @@ export const createLead = lead => (dispatch, getState) => {
           res.json();
         })
         .catch(err => {
+          console.log(err)
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
                 // Convert ValidationErrors into SubmissionErrors for Redux Form
@@ -44,6 +46,12 @@ export const createLead = lead => (dispatch, getState) => {
                         [location]: message
                     })
                 );
+            } else {
+              return Promise.reject(
+                new SubmissionError({
+                    _error: message
+                })
+            );
             }
         });
 };
