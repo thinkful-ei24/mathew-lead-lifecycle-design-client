@@ -7,6 +7,8 @@
   display: grid;
   grid-template-columns: repeat(7, minmax(min-content, 1fr));
   grid-gap: 1px;
+  font-size: 70%;
+  grid-template-columns: auto auto 124px 80px 80px auto 133px;
 }
 
 .header {

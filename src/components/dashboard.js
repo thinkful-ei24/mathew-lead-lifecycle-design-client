@@ -15,16 +15,12 @@ class Dashboard extends React.Component {
       if (!this.props.dashboard.data) {
         return (
           <div className="dashboard">
-            Data: {this.props.dashboard.map(item => {
-              console.log(item)
-              return (
-                <div className="flexcontainer">
-                <LeadGrid />
-                {/* <ViewEditPerson /> */}
-        </div>
-            )})}
+            <div className="flexcontainer">
+            <LeadGrid />
+            {/* <ViewEditPerson /> */}
+            </div>
           </div>
-      );
+      )
       } else {
         return (
           <div>
