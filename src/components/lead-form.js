@@ -30,8 +30,11 @@ export class CreateLead extends React.Component {
         return (
             <form
                 className="createLead-form"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
+                onSubmit={this.props.handleSubmit(values => {
+                  console.log(values)
+                  return this.onSubmit(values)
+                }
+                    
                 )}>
                 <section className="mainLeadForm">
                   <h2>Lead Form</h2>
@@ -77,7 +80,7 @@ export class CreateLead extends React.Component {
 
                   <label htmlFor="leadNotes">Notes</label>
                   <Field
-                    component='textarea'
+                    component="textarea"
                     type="textarea"
                     name="leadNotes"
                     rows="3"

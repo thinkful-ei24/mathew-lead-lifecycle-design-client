@@ -1,21 +1,38 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-// import {fetchProtectedData} from '../actions/protected-data';
-import NavBar from './navbar';
-import LeadPage from './lead-page'
+import {fetchAllLeads} from '../actions/dashboard';
+import LeadGrid from './lead-grid'
+// import NavBar from './navbar';
+// import LeadPage from './lead-page'
 
-export class Dashboard extends React.Component {
+class Dashboard extends React.Component {
     componentDidMount() {
-        // this.props.dispatch(fetchProtectedData());
+        this.props.dispatch(fetchAllLeads());
     }
 
     render() {
+      if (!this.props.dashboard.data) {
         return (
-            <div className="dashboard">
-              
-            </div>
-        );
+          <div className="dashboard">
+            Data: {this.props.dashboard.map(item => {
+              console.log(item)
+              return (
+                <div className="flexcontainer">
+                <LeadGrid />
+                {/* <ViewEditPerson /> */}
+        </div>
+            )})}
+          </div>
+      );
+      } else {
+        return (
+          <div>
+            Loading data...
+          </div>
+        )
+      }
+        
     }
 }
 
@@ -24,7 +41,7 @@ const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
+        dashboard: state.dashboard.data
     };
 };
 

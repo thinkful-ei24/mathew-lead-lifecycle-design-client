@@ -24,7 +24,7 @@ export const createLeadError = error => ({
 export const createLead = lead => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(createLeadRequest());
-
+  
     return fetch(`${API_BASE_URL}/api/leads/`, {
         method: 'POST',
         headers: {
@@ -35,7 +35,9 @@ export const createLead = lead => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => dispatch(createLeadSuccess(data)))
+        .then(({data}) => {
+          dispatch(createLeadSuccess(data))
+        })
         .catch(err => {
           console.log(err)
             const {reason, message, location} = err;

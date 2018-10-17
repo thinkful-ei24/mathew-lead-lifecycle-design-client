@@ -1,0 +1,37 @@
+.flexcontainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.leadgrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(min-content, 1fr));
+  grid-gap: 1px;
+}
+
+.header {
+  background: lightgreen;
+  font-weight: bold;
+}
+
+.cell {
+  white-space: nowrap;
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.cell.firstName, .cell.lastName, .cell.email, .cell.id {
+  grid-column: span 1
+}
+
+section {
+  border:1px solid black;
+}
+
+.selected {
+  background: grey;
+}
+
+.bordered {
+  border: 1px solid black;
+}
