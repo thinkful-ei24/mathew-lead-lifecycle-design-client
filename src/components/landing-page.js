@@ -12,7 +12,7 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-          <section className="loginBox">
+          <section className="loginBox drop-shadow">
               <h2>Welcome! Please Login.</h2>
               <LoginForm />
               <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>

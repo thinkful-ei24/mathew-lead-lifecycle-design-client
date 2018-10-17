@@ -6,10 +6,10 @@ import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
+import NavBar from './navbar';
+import LeadPage from './lead-page'
 
 import {refreshAuthToken} from '../actions/auth';
-// import {clearAuth} from '../actions/auth';
-// import {clearAuthToken} from '../utils/local-storage';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -47,8 +47,10 @@ export class App extends React.Component {
         return (
             <div className="app">
                 <HeaderBar />
+                <NavBar />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
+                <Route exact path="/lead" component={LeadPage} />
                 <Route exact path="/register" component={RegistrationPage} />
             </div>
         );

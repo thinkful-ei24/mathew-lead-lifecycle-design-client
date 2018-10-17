@@ -2,6 +2,7 @@ import {SubmissionError} from 'redux-form';
 
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
+import { bindActionCreators } from '../../../../../AppData/Local/Microsoft/TypeScript/3.1/node_modules/redux';
 
 export const CREATE_LEAD_REQUEST = 'CREATE_LEAD_REQUEST';
 export const createLeadRequest = () => ({
@@ -22,7 +23,8 @@ export const createLeadError = error => ({
 
 export const createLead = lead => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  console.log(lead)
+  dispatch(createLeadRequest());
+
     return fetch(`${API_BASE_URL}/api/leads/`, {
         method: 'POST',
         headers: {
@@ -32,9 +34,8 @@ export const createLead = lead => (dispatch, getState) => {
         body: JSON.stringify(lead)
     })
         .then(res => normalizeResponseErrors(res))
-        .then(res => {
-          res.json();
-        })
+        .then(res => res.json())
+        .then(({data}) => dispatch(createLeadSuccess(data)))
         .catch(err => {
           console.log(err)
             const {reason, message, location} = err;

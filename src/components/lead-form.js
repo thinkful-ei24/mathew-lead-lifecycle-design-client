@@ -1,6 +1,12 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {createLead} from '../actions/leads';
+import '../css/index.css';
+import '../css/leads.css';
+import {LeadUpcomingEvent} from './lead-upcoming-event';
+import {LeadFutureUpcomingEvent} from './lead-future-upcoming-events';
+import {Link, Redirect} from 'react-router-dom';
+
 //import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
 
@@ -27,65 +33,79 @@ export class CreateLead extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                {this.props.error && <strong>{this.props.error}</strong>}
-                <br />
-                <label htmlFor="firstName">First Name</label>
-                <Field 
-                  component={renderField} 
-                  type="text" 
-                  name="firstName" 
-                  validate={[required, nonEmpty, isTrimmed]}
-                />
+                <section className="mainLeadForm">
+                  <h2>Lead Form</h2>
+                  {this.props.error && <strong>{this.props.error}</strong>}
+                  <br />
+                  <label htmlFor="firstName">First Name</label>
+                  <Field 
+                    component={renderField} 
+                    type="text" 
+                    name="firstName" 
+                    validate={[required, nonEmpty, isTrimmed]}
+                  />
 
-                <label htmlFor="lastName">Last Name</label>
-                <Field 
-                  component={renderField} 
-                  type="text" 
-                  name="lastName" 
-                  validate={[required, nonEmpty, isTrimmed]} 
-                />
+                  <label htmlFor="lastName">Last Name</label>
+                  <Field 
+                    component={renderField} 
+                    type="text" 
+                    name="lastName" 
+                    validate={[required, nonEmpty, isTrimmed]} 
+                  />
 
-                <label htmlFor="mobilePhoneNumbergit ">Mobile #</label>
-                <Field
-                  component={renderField}
-                  type="text"
-                  name="mobilePhoneNumber"
-                  validate={[required, nonEmpty, isTrimmed]}
-                />
+                  <label htmlFor="mobilePhoneNumbergit ">Mobile #</label>
+                  <Field
+                    component={renderField}
+                    type="text"
+                    name="mobilePhoneNumber"
+                    validate={[required, nonEmpty, isTrimmed]}
+                  />
 
-                <label htmlFor="homeNumber">Home #</label>
-                <Field
-                  component={renderField}
-                  type="text"
-                  name="homePhoneNumber"
-                />
+                  <label htmlFor="homeNumber">Home #</label>
+                  <Field
+                    component={renderField}
+                    type="text"
+                    name="homePhoneNumber"
+                  />
+                  
+                  <label htmlFor="emailAddress">Email Address</label>
+                  <Field
+                    component={renderField}
+                    type="text"
+                    name="emailAddress"
+                  />
+
+                  <label htmlFor="leadNotes">Notes</label>
+                  <Field
+                    component='textarea'
+                    type="textarea"
+                    name="leadNotes"
+                    rows="3"
+                    cols="25"
+                  />
+                </section>
                 
-                <label htmlFor="emailAddress">Email Address</label>
-                <Field
-                  component={renderField}
-                  type="text"
-                  name="emailAddress"
-                />
-
-                <label htmlFor="leadNotes">Notes</label>
-                <Field
-                  component='textarea'
-                  type="textarea"
-                  name="leadNotes"
-                  rows="3"
-                  cols="25"
-                />
-<br />
-
-                <button
-                  type="submit"
-                  disabled={this.props.pristine || this.props.submitting}>
-                    Save Lead
-                </button>
+                
+            <LeadUpcomingEvent />
+            <LeadFutureUpcomingEvent />
+            <section className="buttons">
+            <Link to="/dashboard">
+              <button>
+                Back to Dashboard
+              </button>
+            </Link>
+              <button
+                type="submit"
+                disabled={this.props.pristine || this.props.submitting}>
+                  Save Lead
+              </button>
+            </section>
+                
             </form>
         );
     }
 }
+//TODO: Make Back to Dashboard button work
 
 export default reduxForm({
     form: 'createlead',

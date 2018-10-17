@@ -56,14 +56,14 @@ code {
   margin-top: 100px;
 }
 
-.loginBox, .registrationBox
+.drop-shadow
 {
     position:relative;
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-.loginBox:before, .loginBox:after, .registrationBox:before, .registrationBox:after
+.drop-shadow:before, .drop-shadow:after
 {
     content:"";
     position:absolute;
@@ -78,7 +78,7 @@ code {
     -moz-border-radius:100px / 10px;
     border-radius:100px / 10px;
 }
-.loginBox:after, .registrationBox:after
+.drop-shadow:after
 {
     right:10px;
     left:auto;

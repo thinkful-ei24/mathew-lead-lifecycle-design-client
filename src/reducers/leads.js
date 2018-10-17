@@ -1,39 +1,31 @@
 import {
-  SET_AUTH_TOKEN,
-  CLEAR_AUTH,
-  AUTH_REQUEST,
-  AUTH_SUCCESS,
-  AUTH_ERROR
+  CREATE_LEAD_REQUEST,
+  CREATE_LEAD_SUCCESS,
+  CREATE_LEAD_ERROR
 } from '../actions/leads';
 
 const initialState = {
   createLead: false,
   leadBeingViewed: null,
   loading: false,
-  error: null
+  error: null,
+  currentLead: null
 };
 
 export default function reducer(state = initialState, action) {
-  if (action.type === SET_AUTH_TOKEN) {
-      return Object.assign({}, state, {
-          authToken: action.authToken
-      });
-  } else if (action.type === CLEAR_AUTH) {
-      return Object.assign({}, state, {
-          authToken: null,
-          currentUser: null
-      });
-  } else if (action.type === AUTH_REQUEST) {
+  
+  if (action.type === CREATE_LEAD_REQUEST) {
       return Object.assign({}, state, {
           loading: true,
           error: null
       });
-  } else if (action.type === AUTH_SUCCESS) {
+  } else if (action.type === CREATE_LEAD_SUCCESS) {
       return Object.assign({}, state, {
           loading: false,
-          currentUser: action.currentUser
+          createLead: true,
+          leadBeingViewed: null
       });
-  } else if (action.type === AUTH_ERROR) {
+  } else if (action.type === CREATE_LEAD_ERROR) {
       return Object.assign({}, state, {
           loading: false,
           error: action.error

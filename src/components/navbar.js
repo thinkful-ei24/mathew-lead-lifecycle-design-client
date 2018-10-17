@@ -6,7 +6,7 @@ export function NavBar(props) {
     return (
         <div className="navBar">
             <Link to="/dashboard">Lead Dashboard</Link>
-            <Link to="/newlead">Create New Lead</Link>
+            <Link to="/lead">Create New Lead</Link>
         </div>
     );
 }

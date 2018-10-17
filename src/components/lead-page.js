@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import NavBar from './navbar';
 
 import LeadForm from './lead-form';
 
@@ -11,13 +12,15 @@ export function LeadPage(props) {
         return <Redirect to="/" />;
     }
     return (
-        <div className="dashboard">
-          <section className="leadForm">  
-            <h2>Lead Form</h2>
-            <LeadForm />
-            {/* <Link to="/">Login</Link> */}
-          </section>
-        </div>
+      <div className="dashboard">
+        <section className="container">
+          <section className="workArea">
+            <section className="leadForm">  
+              <LeadForm />
+            </section>
+          </section>           
+        </section>
+      </div>
     );
 }
 
