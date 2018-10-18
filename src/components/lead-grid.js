@@ -61,7 +61,7 @@ class LeadGrid extends React.Component {
         <React.Fragment>
           <div className="cell header firstName">First Name</div>
           <div className="cell header lastName">Last Name</div>
-          <div className="cell header lastContactedDate">Last Contacted Date</div>
+          <div className="cell header lastContactedDate">Last Contacted <br />Date</div>
           <div className="cell header mobilePhoneNumber">Mobile #</div>
           <div className="cell header homePhoneNumber">Home #</div>
           <div className="cell header email">Email Address</div>
