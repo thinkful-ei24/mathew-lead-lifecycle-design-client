@@ -2,17 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
+import { Notifs } from 'redux-notifications';
 import store from './store';
 import './css/index.css';
-import './css/main.css'
+import './css/main.css';
+import './css/notifications.css';
 import App from './components/app';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-          <App />
-    </Router>
+    <div>
+      <Router>
+        <App />
+      </Router>
+      <Notifs />
+    </div>
   </Provider>,
    document.getElementById('root'));
 

@@ -4,12 +4,15 @@ import {createLead, resetLeadsState} from '../actions/leads';
 import '../css/index.css';
 import '../css/leads.css';
 import {LeadUpcomingEvent} from './lead-upcoming-event';
+import { reducer as notifReducer, actions as notifActions, Notifs } from 'redux-notifications';
 import {LeadFutureUpcomingEvent} from './lead-future-upcoming-events';
 import {Link, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 //import Input from './input';
 import {required, nonEmpty, isTrimmed} from '../utils/validators';
+
+const { notifSend } = notifActions;
 
 const renderField = (field) => {
  return (<div className="input-row">
@@ -22,6 +25,12 @@ const renderField = (field) => {
 export class CreateLead extends React.Component {
     onSubmit(values) {
         const user = {...values};
+        this.props.dispatch(notifSend({
+          message: 'Your New Lead was Saved!',
+          kind: 'info',
+          dismissAfter: 3000
+        }));
+
         return this.props
             .dispatch(createLead(user))
     }

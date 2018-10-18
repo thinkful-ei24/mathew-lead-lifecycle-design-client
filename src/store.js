@@ -7,6 +7,7 @@ import protectedDataReducer from './reducers/protected-data';
 import leadsReducer from './reducers/leads';
 import dashboardReducer from './reducers/dashboard'
 import {setAuthToken, refreshAuthToken} from './actions/auth';
+import { reducer as notifReducer } from 'redux-notifications';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -16,6 +17,7 @@ const store = createStore(
         auth: authReducer,
         protectedData: protectedDataReducer,
         leads: leadsReducer,
+        notifs: notifReducer,
         dashboard: dashboardReducer
     }),
     composeEnhancers( applyMiddleware(thunk) )
