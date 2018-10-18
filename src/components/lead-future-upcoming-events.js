@@ -14,22 +14,16 @@ export class LeadFutureUpcomingEvent extends React.Component {
     //         // .then(() => this.props.dispatch(login(username, password)));
     // }
     
+    // TODO: How do I pass these objects from the UpcomingEventsCreator to the Lead Form? 
+    // Do all of this in the leads.js actions and reducers
+    // IDEA: Create an action to update the leads store with the upcoming events array.
+    // Then When Save Lead is called, it gets the Leads Upcoming Events array. Then it adds it to the send object and sends it on its way.
     render() {
         return (
             <section className="lead-container-future">
               <p><strong>Future Upcoming Events:</strong></p>
               <UpcomingEventsCreator />
-              {/* <section className="leadFutureUpcomingEvent drop-shadow">
-                <p><strong>Due Date</strong></p>
-                <p><strong>Event Type</strong></p>
-                <p><strong>Notes</strong></p>
-                <p><strong>Action</strong></p>
-
-                
-
-              </section> */}
             </section>
-                
         );
     }
 }
