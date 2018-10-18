@@ -30,7 +30,6 @@ export class CreateLead extends React.Component {
     }
 
     render() {
-      console.log(this.props.leadsCreateLead)
       if (this.props.error) {
         this.props.dispatch(notifSend({
           message: this.props.error,
