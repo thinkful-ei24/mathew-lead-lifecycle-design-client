@@ -21,6 +21,11 @@ export const createLeadError = error => ({
     error
 });
 
+export const RESET_LEADS_STATE = 'RESET_LEADS_STATE';
+export const resetLeadsState = () => ({
+  type: RESET_LEADS_STATE
+});
+
 export const createLead = lead => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(createLeadRequest());

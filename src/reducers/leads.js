@@ -1,7 +1,8 @@
 import {
   CREATE_LEAD_REQUEST,
   CREATE_LEAD_SUCCESS,
-  CREATE_LEAD_ERROR
+  CREATE_LEAD_ERROR,
+  RESET_LEADS_STATE
 } from '../actions/leads';
 
 const initialState = {
@@ -30,6 +31,15 @@ export default function reducer(state = initialState, action) {
           loading: false,
           error: action.error
       });
+  } else if (action.type === RESET_LEADS_STATE) {
+    return Object.assign({}, state, {
+      createLead: false,
+      leadBeingViewed: null,
+      loading: false,
+      error: null,
+      currentLead: null
+
+  });
   }
   return state;
 }

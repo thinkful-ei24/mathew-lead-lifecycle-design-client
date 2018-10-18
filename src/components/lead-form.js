@@ -1,17 +1,15 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import {createLead} from '../actions/leads';
+import {createLead, resetLeadsState} from '../actions/leads';
 import '../css/index.css';
 import '../css/leads.css';
 import {LeadUpcomingEvent} from './lead-upcoming-event';
 import {LeadFutureUpcomingEvent} from './lead-future-upcoming-events';
-import {Link, Redirect, push} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
-import {browserHistory} from 'react-router';
 
 //import Input from './input';
-import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
-import { leadSelected } from '../actions/dashboard';
+import {required, nonEmpty, isTrimmed} from '../utils/validators';
 
 const renderField = (field) => {
  return (<div className="input-row">
@@ -26,19 +24,13 @@ export class CreateLead extends React.Component {
         const user = {...values};
         return this.props
             .dispatch(createLead(user))
-            // .then((res) => {
-            //   console.log(this.props.leadsCreateLead)
-            //   if (this.props.leadsCreateLead === true){
-            //     return <Link to='/dashboard' />
-            //   }
     }
 
     render() {
       console.log(this.props.leadsCreateLead)
       if (this.props.leadsCreateLead) {
-        
-        // return browserHistory.push('/dashboard/')
-        return;
+        this.props.dispatch(resetLeadsState())
+        return <Redirect to="/dashboard" />;
       } else {
         return (
             <form
