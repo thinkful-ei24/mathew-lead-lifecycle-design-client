@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchAllLeads } from "../actions/dashboard";
+import '../css/index.css';
 import '../css/dashboard-grid.css';
 const moment = require('moment');
 
