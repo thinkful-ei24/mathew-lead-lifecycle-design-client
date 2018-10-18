@@ -2,8 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchAllLeads } from "../actions/dashboard";
 import '../css/dashboard-grid.css';
+const moment = require('moment');
 
 class LeadGrid extends React.Component {
+
+  
 
   leadClicked(id) {
     this.props.dispatch(fetchAllLeads(id));
@@ -37,7 +40,7 @@ class LeadGrid extends React.Component {
             {x.lastName}
           </div>
           <div className={`cell lastContactedDate ${selected}`} onClick={e => this.personClicked(x.id)}>
-            {x.updatedAt}
+            {moment(x.updatedAt).format('MM-DD-YYYY')}
           </div>
           <div className={`cell email ${selected}`} onClick={e => this.personClicked(x.id)}>
             {x.mobilePhoneNumber}

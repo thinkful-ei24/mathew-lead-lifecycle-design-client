@@ -5,10 +5,13 @@ import '../css/index.css';
 import '../css/leads.css';
 import {LeadUpcomingEvent} from './lead-upcoming-event';
 import {LeadFutureUpcomingEvent} from './lead-future-upcoming-events';
-import {Link, Redirect} from 'react-router-dom';
+import {Link, Redirect, push} from 'react-router-dom';
+import { connect } from 'react-redux';
+import {browserHistory} from 'react-router';
 
 //import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
+import { leadSelected } from '../actions/dashboard';
 
 const renderField = (field) => {
  return (<div className="input-row">
@@ -23,15 +26,24 @@ export class CreateLead extends React.Component {
         const user = {...values};
         return this.props
             .dispatch(createLead(user))
-            // .then(() => this.props.dispatch(login(username, password)));
+            // .then((res) => {
+            //   console.log(this.props.leadsCreateLead)
+            //   if (this.props.leadsCreateLead === true){
+            //     return <Link to='/dashboard' />
+            //   }
     }
 
     render() {
+      console.log(this.props.leadsCreateLead)
+      if (this.props.leadsCreateLead) {
+        
+        // return browserHistory.push('/dashboard/')
+        return;
+      } else {
         return (
             <form
                 className="createLead-form"
                 onSubmit={this.props.handleSubmit(values => {
-                  console.log(values)
                   return this.onSubmit(values)
                 }
                     
@@ -106,10 +118,16 @@ export class CreateLead extends React.Component {
                 
             </form>
         );
-    }
+    }}
+}
+
+function mapStateToProps(state) {
+  return {
+    leadsCreateLead: state.leads.createLead
+  }
 }
 //TODO: Make Back to Dashboard button work
-
+CreateLead = connect( mapStateToProps)(CreateLead);
 export default reduxForm({
     form: 'createlead',
     onSubmitFail: (errors, dispatch) =>

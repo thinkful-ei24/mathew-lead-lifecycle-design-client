@@ -23,12 +23,12 @@
 }
 
 .cell.firstName, .cell.lastName, .cell.email, .cell.id {
-  grid-column: span 1
+  grid-column: span 1;
 }
 
-section {
+/* section {
   border:1px solid black;
-}
+} */
 
 .selected {
   background: grey;

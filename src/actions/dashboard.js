@@ -41,7 +41,6 @@ export const fetchAllLeads = () => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((results) => {
-          console.log('data is...', results)
           dispatch(fetchLeadsSuccess(results))
         })
         .catch(err => {
