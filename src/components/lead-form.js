@@ -15,30 +15,38 @@ import {required, nonEmpty, isTrimmed} from '../utils/validators';
 const { notifSend } = notifActions;
 
 const renderField = (field) => {
- return (<div className="input-row">
+ return (<section className="input-row">
   <input {...field.input} type="text"/>
   {field.meta.touched && field.meta.error && 
     <span className="error">{field.meta.error}</span>}
-  </div>)
+  </section>)
 }
 
 export class CreateLead extends React.Component {
     onSubmit(values) {
         const user = {...values};
-        this.props.dispatch(notifSend({
-          message: 'Your New Lead was Saved!',
-          kind: 'info',
-          dismissAfter: 3000
-        }));
-
         return this.props
             .dispatch(createLead(user))
     }
 
     render() {
       console.log(this.props.leadsCreateLead)
+      if (this.props.error) {
+        this.props.dispatch(notifSend({
+          message: this.props.error,
+          kind: 'warning',
+          dismissAfter: 3000
+        }));
+      }
+
       if (this.props.leadsCreateLead) {
         this.props.dispatch(resetLeadsState())
+        
+        this.props.dispatch(notifSend({
+          message: 'Your New Lead was Saved!',
+          kind: 'info',
+          dismissAfter: 3000
+        }));
         return <Redirect to="/dashboard" />;
       } else {
         return (

@@ -18,7 +18,8 @@
 
 .notif {
   position      : relative;
-  font          : 1rem normal Helvetica, sans-serif;
+  font          : 1rem normal;
+  font-family   : 'Montserrat', sans-serif;
   overflow      : hidden;
   border-radius : 4px;
   margin-bottom : 2px;
@@ -34,7 +35,7 @@
 }
 
 .notif--info {
-  background-color: #3ea2ff;
+  background-color: #71b7f8;
 }
 
 .notif--warning {
@@ -47,7 +48,7 @@
 
 .notif__container {
   position  : fixed;
-  top       : 10px;
+  top       : 25px;
   right     : 0;
   left      : 0;
   z-index   : 1000;
@@ -55,3 +56,5 @@
   max-width : 250px;
   margin    : auto;
 }
+
+/* add a "lead not saved" in red */
