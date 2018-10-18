@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-
 const schedule = {
   1: [2, 'Follow Up Call'],
   2: [2, 'Follow Up Text'],
@@ -14,14 +13,7 @@ const schedule = {
   9: [7, 'Follow Up Email'],
 }
 
-//Upcoming Events Array Creator (An Array of Date Objects => An Array of this format:
-// let eventObjTwo = {
-//   eventType: 'Automated Text',
-//   dateAndTime: moment("2018-10-28T17:36:02.226Z"),
-//   notes: "Text this person"
-// })
-const dateArray = [];
-  let newDate = moment();
+
 
 export default class UpcomingEventsCreator extends React.Component {
   //Date Array Creator
@@ -37,42 +29,18 @@ export default class UpcomingEventsCreator extends React.Component {
   //Add seven days for follow up email
   
   generateDateArray() {
+    let dateArray = [];
+    let newDate = moment();
     Object.keys(schedule).forEach(item => {
       newDate = newDate.clone().add(schedule[item][0], 'days');
       dateArray.push([newDate, schedule[item][1], 'Automatically generated']);
     });
-  
     return dateArray;
   }
 
-  
-//   render() {
-//     console.log(dateArray.map(event => {
-//       return (
-//         <section>
-//         <p>{event[0].format("MM/DD/YY")}</p>
-//         <p>{event[1]}</p>
-//         <p>{event[2]}</p>
-//         <p>Edit / Delete</p>
-//         </section>
-//       )
-//     }))
-//     return ( dateArray.map(event => {
-//       return (
-//         <section>
-//         <p>{event[0].format("MM/DD/YY")}</p>
-//         <p>{event[1]}</p>
-//         <p>{event[2]}</p>
-//         <p>Edit / Delete</p>
-//         </section>
-//       )
-//     }))
-//   }
-// }
-
 render() {
-  const dateArray = this.generateDateArray();
-  const eventCells = dateArray.map(event => {
+  const newDateArray = this.generateDateArray();
+  const eventCells = newDateArray.map(event => {
     return (
       /*
         A note on React.Fragment:
@@ -101,10 +69,10 @@ render() {
   )});
   let headerCells = (
       <React.Fragment>
-        <div className="date">Due Date</div>
-        <div className="eventType">Event Type</div>
-        <div className="notes">Notes <br />Date</div>
-        <div className="action">Action</div>
+        <div className="date"><strong>Due Date</strong></div>
+        <div className="eventType"><strong>Event Type</strong></div>
+        <div className="notes"><strong>Notes</strong></div>
+        <div className="action"><strong>Action</strong></div>
       </React.Fragment>
     );
   return (

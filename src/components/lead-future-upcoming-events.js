@@ -19,7 +19,7 @@ export class LeadFutureUpcomingEvent extends React.Component {
             <section className="lead-container-future">
               <p><strong>Future Upcoming Events:</strong></p>
               <UpcomingEventsCreator />
-              <section className="leadFutureUpcomingEvent drop-shadow">
+              {/* <section className="leadFutureUpcomingEvent drop-shadow">
                 <p><strong>Due Date</strong></p>
                 <p><strong>Event Type</strong></p>
                 <p><strong>Notes</strong></p>
@@ -27,7 +27,7 @@ export class LeadFutureUpcomingEvent extends React.Component {
 
                 
 
-              </section>
+              </section> */}
             </section>
                 
         );
