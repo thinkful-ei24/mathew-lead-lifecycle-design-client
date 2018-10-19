@@ -33,6 +33,8 @@ export class UpcomingEventsCreator extends React.Component {
   constructor(props) {
     super(props);
     this.newDateArray = this.generateDateArray();
+  }
+  componentDidMount() {
     this.props.dispatch(stateUpdateUpcomingEvents(this.newDateArray));
   }
   
@@ -47,9 +49,7 @@ export class UpcomingEventsCreator extends React.Component {
   }
 
 render() {
-  //const newDateArray = this.generateDateArray();
-  //this.props.dispatch(stateUpdateUpcomingEvents(this.newDateArray));
-
+  
   const eventCells = this.newDateArray.map(event => {
     return (
       /*
@@ -62,7 +62,7 @@ render() {
         See the docs for more on fragments:
         https://reactjs.org/docs/fragments.html
       */
-      <React.Fragment key={event.id}>
+      <React.Fragment key={event[0] + event[1]}>
         <div className='date' >
           {event[0].format("MM/DD/YY")}
         </div>
@@ -95,7 +95,7 @@ render() {
 }
 
 const mapStateToProps = state => {
-  const {currentUser} = state.auth;
+  //const {currentUser} = state.auth;
   return {
       username: state.auth.currentUser.username,
       leads: state.leads

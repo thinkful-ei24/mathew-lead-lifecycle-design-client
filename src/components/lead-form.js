@@ -4,7 +4,7 @@ import {createLead, resetLeadsState} from '../actions/leads';
 import '../css/index.css';
 import '../css/leads.css';
 import {LeadUpcomingEvent} from './lead-upcoming-event';
-import { reducer as notifReducer, actions as notifActions, Notifs } from 'redux-notifications';
+import { actions as notifActions } from 'redux-notifications';
 import {LeadFutureUpcomingEvent} from './lead-future-upcoming-events';
 import {Link, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -24,7 +24,10 @@ const renderField = (field) => {
 
 export class CreateLead extends React.Component {
     onSubmit(values) {
-        const user = {...values};
+      //const upcomingEventsToSend = this.props.leads.upcomingEvents;
+        // const user = {...values, upcomingEventsToSend};
+        const user = {...values}
+        console.log(user)
         return this.props
             .dispatch(createLead(user))
     }
@@ -131,7 +134,8 @@ export class CreateLead extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    leadsCreateLead: state.leads.createLead
+    leadsCreateLead: state.leads.createLead,
+    //upcomingEvents: state.leads.upcomingEvents
   }
 }
 //TODO: Make Back to Dashboard button work

@@ -2,7 +2,6 @@ import {SubmissionError} from 'redux-form';
 
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
-import { bindActionCreators } from '../../../../../AppData/Local/Microsoft/TypeScript/3.1/node_modules/redux';
 
 export const CREATE_LEAD_REQUEST = 'CREATE_LEAD_REQUEST';
 export const createLeadRequest = () => ({

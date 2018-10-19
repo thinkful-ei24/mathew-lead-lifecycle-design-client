@@ -1,7 +1,7 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import moment from 'moment';
-import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
+import {reduxForm, focus} from 'redux-form';
+//import moment from 'moment';
+//import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
 import UpcomingEventsCreator from './automated-scheduled-events';
 import '../css/index.css';
 import '../css/leads.css';
