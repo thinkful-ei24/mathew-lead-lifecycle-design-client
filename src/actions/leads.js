@@ -34,7 +34,6 @@ export const stateUpdateUpcomingEvents = upcomingEvents => ({
 export const createLead = lead => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(createLeadRequest());
-  console.log(lead)
   
     return fetch(`${API_BASE_URL}/api/leads/`, {
         method: 'POST',

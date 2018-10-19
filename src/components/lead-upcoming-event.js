@@ -1,7 +1,6 @@
 import React from 'react';
 import {reduxForm, focus} from 'redux-form';
 import { connect } from 'react-redux';
-import moment from 'moment';
 import '../css/index.css';
 import '../css/leads.css';
 
@@ -16,7 +15,6 @@ export class LeadUpcomingEvent extends React.Component {
     //Below is just basic placeholder text.
     //TODO Make dynamic so it gets the data from the server
     render() {
-      console.log('UPCOMING EVENTS', this.props.upcomingEvents)
       if (!this.props.upcomingEvents) {
         return null;
       }

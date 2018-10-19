@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchAllLeads} from '../actions/dashboard';
 import LeadGrid from './lead-grid'
-// import NavBar from './navbar';
-// import LeadPage from './lead-page'
 
 class Dashboard extends React.Component {
     componentDidMount() {

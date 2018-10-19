@@ -9,11 +9,14 @@ class LeadGrid extends React.Component {
 
   
 
+  //Goal of this is to click on a row, then it opens a lead viewer
   leadClicked(id) {
     this.props.dispatch(fetchAllLeads(id));
   }
-
+  
   render() {
+    
+
     const leadCells = this.props.leads.map((x, i) => {
 
       /*
@@ -35,25 +38,25 @@ class LeadGrid extends React.Component {
         */
         <React.Fragment key={x.firstName + x.lastName}>
           
-          <div className={`cell firstName ${selected}`} onClick={e => this.personClicked(x.id)}>
+          <div className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.firstName}
           </div>
-          <div className={`cell lastName ${selected}`} onClick={e => this.personClicked(x.id)}>
+          <div className={`cell lastName ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.lastName}
           </div>
-          <div className={`cell lastContactedDate ${selected}`} onClick={e => this.personClicked(x.id)}>
+          <div className={`cell lastContactedDate ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {moment(x.updatedAt).format('MM-DD-YYYY')}
           </div>
-          <div className={`cell email ${selected}`} onClick={e => this.personClicked(x.id)}>
+          <div className={`cell email ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.mobilePhoneNumber}
           </div>
-          <div className={`cell email ${selected}`} onClick={e => this.personClicked(x.id)}>
+          <div className={`cell email ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.homePhoneNumber}
           </div>
-          <div className={`cell email ${selected}`} onClick={e => this.personClicked(x.id)}>
+          <div className={`cell email ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.emailAddress}
           </div>
-          <div className={`cell email ${selected}`} onClick={e => this.personClicked(x.id)}>
+          <div className={`cell email ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.nextScheduledEvent}
           </div>
         </React.Fragment>

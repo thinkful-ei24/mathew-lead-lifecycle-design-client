@@ -55,7 +55,6 @@ export class UpcomingEventsCreator extends React.Component {
       }
       dateArray.push(newObj)
     })
-    console.log(dateArray)
     return dateArray;
   }
 
