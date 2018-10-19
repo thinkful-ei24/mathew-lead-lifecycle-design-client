@@ -1,6 +1,6 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
+import {reduxForm, focus} from 'redux-form';
+//import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
 import '../css/index.css';
 import '../css/leads.css';
 

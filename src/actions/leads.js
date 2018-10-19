@@ -2,7 +2,6 @@ import {SubmissionError} from 'redux-form';
 
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
-import { bindActionCreators } from '../../../../../AppData/Local/Microsoft/TypeScript/3.1/node_modules/redux';
 
 export const CREATE_LEAD_REQUEST = 'CREATE_LEAD_REQUEST';
 export const createLeadRequest = () => ({
@@ -26,9 +25,16 @@ export const resetLeadsState = () => ({
   type: RESET_LEADS_STATE
 });
 
+export const STATE_UPDATE_UPCOMING_EVENTS = 'STATE_UPDATE_UPCOMING_EVENTS';
+export const stateUpdateUpcomingEvents = upcomingEvents => ({
+  type: STATE_UPDATE_UPCOMING_EVENTS,
+  upcomingEvents
+})
+
 export const createLead = lead => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(createLeadRequest());
+  console.log(lead)
   
     return fetch(`${API_BASE_URL}/api/leads/`, {
         method: 'POST',

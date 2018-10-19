@@ -2,7 +2,8 @@ import {
   CREATE_LEAD_REQUEST,
   CREATE_LEAD_SUCCESS,
   CREATE_LEAD_ERROR,
-  RESET_LEADS_STATE
+  RESET_LEADS_STATE,
+  STATE_UPDATE_UPCOMING_EVENTS
 } from '../actions/leads';
 
 const initialState = {
@@ -10,7 +11,8 @@ const initialState = {
   leadBeingViewed: null,
   loading: false,
   error: null,
-  currentLead: null
+  currentLead: null,
+  upcomingEvents: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -37,7 +39,14 @@ export default function reducer(state = initialState, action) {
       leadBeingViewed: null,
       loading: false,
       error: null,
-      currentLead: null
+      currentLead: null,
+      upcomingEvents: null
+
+  });
+  } else if (action.type === STATE_UPDATE_UPCOMING_EVENTS) {
+    console.log('reducer', action)
+    return Object.assign({}, state, {
+      upcomingEvents: action.upcomingEvents
 
   });
   }

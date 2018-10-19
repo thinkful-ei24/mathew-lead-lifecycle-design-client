@@ -33,7 +33,8 @@ class LeadGrid extends React.Component {
           See the docs for more on fragments:
           https://reactjs.org/docs/fragments.html
         */
-        <React.Fragment key={x.id}>
+        <React.Fragment key={x.firstName + x.lastName}>
+          
           <div className={`cell firstName ${selected}`} onClick={e => this.personClicked(x.id)}>
             {x.firstName}
           </div>

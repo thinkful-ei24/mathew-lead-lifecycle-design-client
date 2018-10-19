@@ -1,10 +1,11 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {createLead, resetLeadsState} from '../actions/leads';
+import { clearSubmitErrors } from 'redux-form';
 import '../css/index.css';
 import '../css/leads.css';
 import {LeadUpcomingEvent} from './lead-upcoming-event';
-import { reducer as notifReducer, actions as notifActions, Notifs } from 'redux-notifications';
+import { actions as notifActions } from 'redux-notifications';
 import {LeadFutureUpcomingEvent} from './lead-future-upcoming-events';
 import {Link, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -24,21 +25,16 @@ const renderField = (field) => {
 
 export class CreateLead extends React.Component {
     onSubmit(values) {
-        const user = {...values};
-        return this.props
-            .dispatch(createLead(user))
+      console.log(this.props)
+      const scheduledEvents = this.props.upcomingEvents;
+      console.log(this.props)
+        // const user = {...values, upcomingEventsToSend};
+        const user = {...values, scheduledEvents}
+        console.log(user)
+        return this.props.dispatch(createLead(user));
     }
 
-    render() {
-      console.log(this.props.leadsCreateLead)
-      if (this.props.error) {
-        this.props.dispatch(notifSend({
-          message: this.props.error,
-          kind: 'warning',
-          dismissAfter: 3000
-        }));
-      }
-
+    componentWillUnmount() {
       if (this.props.leadsCreateLead) {
         this.props.dispatch(resetLeadsState())
         
@@ -47,8 +43,33 @@ export class CreateLead extends React.Component {
           kind: 'info',
           dismissAfter: 3000
         }));
-        return <Redirect to="/dashboard" />;
-      } else {
+        
+    }
+  }
+  componentDidUpdate() {
+    if (this.props.error) {
+      this.errorGenerated();
+      this.props.dispatch(clearSubmitErrors('createlead'));
+    }
+  }
+
+    errorGenerated() {
+      return this.props.dispatch(notifSend({
+        message: this.props.error,
+        kind: 'warning',
+        dismissAfter: 3000
+      }));
+    }
+
+    render() {
+      // if (this.props.error) {
+      //   this.errorGenerated();
+      // }
+
+      if (this.props.leadsCreateLead) {
+        return <Redirect to='/dashboard/' />;
+      }
+
         return (
             <form
                 className="createLead-form"
@@ -128,11 +149,11 @@ export class CreateLead extends React.Component {
             </form>
         );
     }}
-}
 
 function mapStateToProps(state) {
   return {
-    leadsCreateLead: state.leads.createLead
+    leadsCreateLead: state.leads.createLead,
+    upcomingEvents: state.leads.upcomingEvents
   }
 }
 //TODO: Make Back to Dashboard button work
