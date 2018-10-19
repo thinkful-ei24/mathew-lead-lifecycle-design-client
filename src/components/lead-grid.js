@@ -1,13 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import { fetchAllLeads } from "../actions/dashboard";
 import '../css/index.css';
 import '../css/dashboard-grid.css';
+import '../css/responsiveTableStyle.css'
 const moment = require('moment');
 
-class LeadGrid extends React.Component {
 
-  
+class LeadGrid extends React.Component {
 
   //Goal of this is to click on a row, then it opens a lead viewer
   leadClicked(id) {
@@ -37,7 +38,7 @@ class LeadGrid extends React.Component {
           https://reactjs.org/docs/fragments.html
         */
         <React.Fragment key={x.firstName + x.lastName}>
-          
+        
           <div className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.firstName}
           </div>
@@ -63,7 +64,7 @@ class LeadGrid extends React.Component {
     )});
     let headerCells = (
         <React.Fragment>
-          <div className="cell header firstName">First Name</div>
+           <div className="cell header firstName">First Name</div>
           <div className="cell header lastName">Last Name</div>
           <div className="cell header lastContactedDate">Last Contacted <br />Date</div>
           <div className="cell header mobilePhoneNumber">Mobile #</div>
@@ -77,6 +78,7 @@ class LeadGrid extends React.Component {
         <div className="leadgrid">
           {headerCells}
           {leadCells}
+            
         </div>
     );    
   }
