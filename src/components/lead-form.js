@@ -25,13 +25,9 @@ const renderField = (field) => {
 
 export class CreateLead extends React.Component {
     onSubmit(values) {
-      console.log(this.props)
       const scheduledEvents = this.props.upcomingEvents;
-      console.log(this.props)
-        // const user = {...values, upcomingEventsToSend};
-        const user = {...values, scheduledEvents}
-        console.log(user)
-        return this.props.dispatch(createLead(user));
+      const user = {...values, scheduledEvents}
+      return this.props.dispatch(createLead(user));
     }
 
     componentWillUnmount() {
@@ -62,10 +58,6 @@ export class CreateLead extends React.Component {
     }
 
     render() {
-      // if (this.props.error) {
-      //   this.errorGenerated();
-      // }
-
       if (this.props.leadsCreateLead) {
         return <Redirect to='/dashboard/' />;
       }

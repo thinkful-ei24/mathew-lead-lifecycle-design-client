@@ -1,6 +1,7 @@
 import React from 'react';
 import {reduxForm, focus} from 'redux-form';
-//import {required, nonEmpty, matches, length, isTrimmed} from '../utils/validators';
+import { connect } from 'react-redux';
+import moment from 'moment';
 import '../css/index.css';
 import '../css/leads.css';
 
@@ -15,14 +16,19 @@ export class LeadUpcomingEvent extends React.Component {
     //Below is just basic placeholder text.
     //TODO Make dynamic so it gets the data from the server
     render() {
+      console.log('UPCOMING EVENTS', this.props.upcomingEvents)
+      if (!this.props.upcomingEvents) {
+        return null;
+      }
         return (
+          
             <section className="lead-container">
               <p><strong>Next Upcoming Event:</strong></p>
               <section className="leadNextUpcomingEvent drop-shadow">
-                <p><strong>Type: Automated Email</strong></p>
-                <p><strong>Due Date: </strong>10/15/18</p>
+                <p><strong>Type: {this.props.upcomingEvents[0].eventType}</strong></p>
+                <p><strong>Due Date: </strong>{this.props.upcomingEvents[0].dateAndTime.format("MM/DD/YY")}</p>
                 <p><strong>Notes:</strong><br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat. Aliquam egestas, velit at condimentum placerat, sem sapien laoreet mauris, dictum porttitor lacus est nec enim. Vivamus feugiat elit lorem, eu porttitor ante ultrices id. Phasellus suscipit tellus ante, nec dignissim elit imperdiet nec. Nullam fringilla feugiat nisl. Ut pretium, metus venenatis dictum viverra, dui metus finibus enim, ac rhoncus sem lorem vitae mauris. 
+                  {this.props.upcomingEvents[0].notes}
                 </p>
 
                 <button
@@ -38,6 +44,13 @@ export class LeadUpcomingEvent extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+  //const {currentUser} = state.auth;
+  return {
+      upcomingEvents: state.leads.upcomingEvents
+  };
+};
+LeadUpcomingEvent = connect( mapStateToProps)(LeadUpcomingEvent);
 export default reduxForm({
     form: 'createlead',
     onSubmitFail: (errors, dispatch) =>
