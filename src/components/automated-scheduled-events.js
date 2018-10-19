@@ -30,27 +30,30 @@ export class UpcomingEventsCreator extends React.Component {
   //Add seven days for follow up Call
   //Add seven days to that for follow up text
   //Add seven days for follow up email
+
   constructor(props) {
     super(props);
-    this.newDateArray = this.generateDateArray();
-  }
-  componentDidMount() {
-    this.props.dispatch(stateUpdateUpcomingEvents(this.newDateArray));
+    this.generateDateArray();
+    // this.props.dispatch(stateUpdateUpcomingEvents(newDateArray));
   }
   
   generateDateArray = () => {
+    console.log('This is running')
     let dateArray = [];
     let newDate = moment();
     Object.keys(schedule).forEach(item => {
       newDate = newDate.clone().add(schedule[item][0], 'days');
       dateArray.push([newDate, schedule[item][1], 'Automatically generated']);
     });
-    return dateArray;
+    console.log('Date Array is ', dateArray)
+    this.props.dispatch(stateUpdateUpcomingEvents(dateArray));
+    console.log('Props.leads.upcomingEvents is ', this.props.leads.upcomingEvents)
+    // return dateArray;
   }
 
 render() {
-  
-  const eventCells = this.newDateArray.map(event => {
+  console.log('Line 55', this.props.leads.upcomingEvents)
+  const eventCells = this.props.leads.upcomingEvents.map(event => {
     return (
       /*
         A note on React.Fragment:
@@ -98,7 +101,8 @@ const mapStateToProps = state => {
   //const {currentUser} = state.auth;
   return {
       username: state.auth.currentUser.username,
-      leads: state.leads
+      leads: state.leads,
+      upcomingEvents: state.leads.upcomingEvents
   };
 };
 export default requiresLogin()(connect(mapStateToProps)(UpcomingEventsCreator));
