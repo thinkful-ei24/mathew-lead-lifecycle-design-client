@@ -17,7 +17,6 @@ class LeadGrid extends React.Component {
   
   render() {
     
-
     const leadCells = this.props.leads.map((x, i) => {
 
       /*
@@ -38,39 +37,39 @@ class LeadGrid extends React.Component {
           https://reactjs.org/docs/fragments.html
         */
         <React.Fragment key={x.firstName + x.lastName}>
-        
-          <div className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
-            {x.firstName}
-          </div>
-          <div className={`cell lastName ${selected}`} onClick={e => this.leadClicked(x.id)}>
-            {x.lastName}
-          </div>
-          <div className={`cell lastContactedDate ${selected}`} onClick={e => this.leadClicked(x.id)}>
-            {moment(x.updatedAt).format('MM-DD-YYYY')}
-          </div>
-          <div className={`cell email ${selected}`} onClick={e => this.leadClicked(x.id)}>
-            {x.mobilePhoneNumber}
-          </div>
-          <div className={`cell email ${selected}`} onClick={e => this.leadClicked(x.id)}>
-            {x.homePhoneNumber}
-          </div>
-          <div className={`cell email ${selected}`} onClick={e => this.leadClicked(x.id)}>
-            {x.emailAddress}
-          </div>
-          <div className={`cell email ${selected}`} onClick={e => this.leadClicked(x.id)}>
-            {x.nextScheduledEvent}
-          </div>
+            <div className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              {x.firstName}
+            </div>
+            <div className={`cell lastName ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              {x.lastName}
+            </div>
+            <div className={`cell lastContactedDate ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              {moment(x.updatedAt).format('MM-DD-YYYY')}
+            </div>
+            <div className={`cell mobilePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              {x.mobilePhoneNumber}
+            </div>
+            <div className={`cell homePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              {x.homePhoneNumber}
+            </div>
+            <div className={`cell emailAddress ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              {x.emailAddress}
+            </div>
+            <div className={`cell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              {x.nextScheduledEvent}
+            </div>
+
         </React.Fragment>
     )});
     let headerCells = (
         <React.Fragment>
-           <div className="cell header firstName">First Name</div>
-          <div className="cell header lastName">Last Name</div>
-          <div className="cell header lastContactedDate">Last Contacted <br />Date</div>
-          <div className="cell header mobilePhoneNumber">Mobile #</div>
-          <div className="cell header homePhoneNumber">Home #</div>
-          <div className="cell header email">Email Address</div>
-          <div className="cell header nextScheduledEvent">Next Scheduled Event</div>
+          <div className="cell header firstName">First Name</div>
+            <div className="cell header lastName">Last Name</div>
+            <div className="cell header lastContactedDate">Last Contacted <br />Date</div>
+            <div className="cell header mobilePhoneNumber">Mobile #</div>
+            <div className="cell header homePhoneNumber">Home #</div>
+            <div className="cell header email">Email Address</div>
+            <div className="cell header nextScheduledEvent">Next Scheduled Event</div>
         </React.Fragment>
       );
     
