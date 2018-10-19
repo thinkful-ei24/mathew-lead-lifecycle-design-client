@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {createLead, resetLeadsState} from '../actions/leads';
+import { clearSubmitErrors } from 'redux-form';
 import '../css/index.css';
 import '../css/leads.css';
 import {LeadUpcomingEvent} from './lead-upcoming-event';
@@ -43,15 +44,25 @@ export class CreateLead extends React.Component {
         
     }
   }
+  componentDidUpdate() {
+    if (this.props.error) {
+      this.errorGenerated();
+      this.props.dispatch(clearSubmitErrors('createlead'));
+    }
+  }
+
+    errorGenerated() {
+      return this.props.dispatch(notifSend({
+        message: this.props.error,
+        kind: 'warning',
+        dismissAfter: 3000
+      }));
+    }
 
     render() {
-      if (this.props.error) {
-        this.props.dispatch(notifSend({
-          message: this.props.error,
-          kind: 'warning',
-          dismissAfter: 3000
-        }));
-      }
+      // if (this.props.error) {
+      //   this.errorGenerated();
+      // }
 
       if (this.props.leadsCreateLead) {
         return <Redirect to='/dashboard/' />;
