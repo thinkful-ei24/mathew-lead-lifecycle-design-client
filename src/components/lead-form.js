@@ -25,9 +25,11 @@ const renderField = (field) => {
 
 export class CreateLead extends React.Component {
     onSubmit(values) {
-      //const upcomingEventsToSend = this.props.leads.upcomingEvents;
+      console.log(this.props)
+      const scheduledEvents = this.props.upcomingEvents;
+      console.log(this.props)
         // const user = {...values, upcomingEventsToSend};
-        const user = {...values}
+        const user = {...values, scheduledEvents}
         console.log(user)
         return this.props.dispatch(createLead(user));
     }
@@ -151,7 +153,7 @@ export class CreateLead extends React.Component {
 function mapStateToProps(state) {
   return {
     leadsCreateLead: state.leads.createLead,
-    //upcomingEvents: state.leads.upcomingEvents
+    upcomingEvents: state.leads.upcomingEvents
   }
 }
 //TODO: Make Back to Dashboard button work
