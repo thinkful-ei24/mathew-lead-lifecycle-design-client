@@ -28,9 +28,21 @@ export class CreateLead extends React.Component {
         // const user = {...values, upcomingEventsToSend};
         const user = {...values}
         console.log(user)
-        return this.props
-            .dispatch(createLead(user))
+        return this.props.dispatch(createLead(user));
     }
+
+    componentWillUnmount() {
+      if (this.props.leadsCreateLead) {
+        this.props.dispatch(resetLeadsState())
+        
+        this.props.dispatch(notifSend({
+          message: 'Your New Lead was Saved!',
+          kind: 'info',
+          dismissAfter: 3000
+        }));
+        
+    }
+  }
 
     render() {
       if (this.props.error) {
@@ -42,15 +54,9 @@ export class CreateLead extends React.Component {
       }
 
       if (this.props.leadsCreateLead) {
-        this.props.dispatch(resetLeadsState())
-        
-        this.props.dispatch(notifSend({
-          message: 'Your New Lead was Saved!',
-          kind: 'info',
-          dismissAfter: 3000
-        }));
-        return <Redirect to="/dashboard" />;
-      } else {
+        return <Redirect to='/dashboard/' />;
+      }
+
         return (
             <form
                 className="createLead-form"
@@ -130,7 +136,6 @@ export class CreateLead extends React.Component {
             </form>
         );
     }}
-}
 
 function mapStateToProps(state) {
   return {
