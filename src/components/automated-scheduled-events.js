@@ -35,12 +35,27 @@ export class UpcomingEventsCreator extends React.Component {
   }
   
   generateDateArray = () => {
+    // let dateArray = [];
+    // let newDate = moment();
+    // Object.keys(schedule).forEach(item => {
+    //   newDate = newDate.clone().add(schedule[item][0], 'days');
+    //   dateArray.push([newDate, schedule[item][1], 'Automatically generated']);
+    // });
+    // return dateArray;
+
     let dateArray = [];
     let newDate = moment();
-    Object.keys(schedule).forEach(item => {
+
+    Object.keys(schedule).forEach( item => {
       newDate = newDate.clone().add(schedule[item][0], 'days');
-      dateArray.push([newDate, schedule[item][1], 'Automatically generated']);
-    });
+      const newObj = {
+        eventType: schedule[item][1],
+        dateAndTime: newDate,
+        notes: 'Automatically generated',
+      }
+      dateArray.push(newObj)
+    })
+    console.log(dateArray)
     return dateArray;
   }
 
@@ -60,15 +75,15 @@ render() {
         See the docs for more on fragments:
         https://reactjs.org/docs/fragments.html
       */
-      <React.Fragment key={event[0] + event[1]}>
+      <React.Fragment key={event.dateAndTime + event.eventType}>
         <div className='date' >
-          {event[0].format("MM/DD/YY")}
+          {event.dateAndTime.format("MM/DD/YY")}
         </div>
         <div className='eventType' >
-          {event[1]}
+          {event.eventType}
         </div>
         <div className='notes' >
-          {event[2]}
+          {event.notes}
         </div>
         <div className='action' >
           Edit / Delete
