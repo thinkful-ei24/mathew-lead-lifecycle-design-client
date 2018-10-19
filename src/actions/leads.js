@@ -26,6 +26,12 @@ export const resetLeadsState = () => ({
   type: RESET_LEADS_STATE
 });
 
+export const STATE_UPDATE_UPCOMING_EVENTS = 'STATE_UPDATE_UPCOMING_EVENTS';
+export const stateUpdateUpcomingEvents = upcomingEvents => ({
+  type: STATE_UPDATE_UPCOMING_EVENTS,
+  upcomingEvents
+})
+
 export const createLead = lead => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(createLeadRequest());

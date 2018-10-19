@@ -1,5 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import moment from 'moment';
+import {stateUpdateUpcomingEvents} from '../actions/leads';
+import requiresLogin from './requires-login';
 
 const schedule = {
   1: [2, 'Follow Up Call'],
@@ -15,7 +18,7 @@ const schedule = {
 
 
 
-export default class UpcomingEventsCreator extends React.Component {
+export class UpcomingEventsCreator extends React.Component {
   //Date Array Creator
   //Get today's date
   //Add two days for follow up Call
@@ -27,8 +30,13 @@ export default class UpcomingEventsCreator extends React.Component {
   //Add seven days for follow up Call
   //Add seven days to that for follow up text
   //Add seven days for follow up email
+  constructor(props) {
+    super(props);
+    this.newDateArray = this.generateDateArray();
+    this.props.dispatch(stateUpdateUpcomingEvents(this.newDateArray));
+  }
   
-  generateDateArray() {
+  generateDateArray = () => {
     let dateArray = [];
     let newDate = moment();
     Object.keys(schedule).forEach(item => {
@@ -39,8 +47,10 @@ export default class UpcomingEventsCreator extends React.Component {
   }
 
 render() {
-  const newDateArray = this.generateDateArray();
-  const eventCells = newDateArray.map(event => {
+  //const newDateArray = this.generateDateArray();
+  //this.props.dispatch(stateUpdateUpcomingEvents(this.newDateArray));
+
+  const eventCells = this.newDateArray.map(event => {
     return (
       /*
         A note on React.Fragment:
@@ -83,3 +93,12 @@ render() {
   );    
 }
 }
+
+const mapStateToProps = state => {
+  const {currentUser} = state.auth;
+  return {
+      username: state.auth.currentUser.username,
+      leads: state.leads
+  };
+};
+export default requiresLogin()(connect(mapStateToProps)(UpcomingEventsCreator));
