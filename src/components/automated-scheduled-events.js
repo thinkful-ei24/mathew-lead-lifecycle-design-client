@@ -16,8 +16,6 @@ const schedule = {
   9: [7, 'Follow Up Email'],
 }
 
-
-
 export class UpcomingEventsCreator extends React.Component {
   //Date Array Creator
   //Get today's date
@@ -31,29 +29,26 @@ export class UpcomingEventsCreator extends React.Component {
   //Add seven days to that for follow up text
   //Add seven days for follow up email
 
-  constructor(props) {
-    super(props);
-    this.generateDateArray();
-    // this.props.dispatch(stateUpdateUpcomingEvents(newDateArray));
+  componentWillMount() {
+    const dateArray = this.generateDateArray();
+    this.props.dispatch(stateUpdateUpcomingEvents(dateArray));
   }
   
   generateDateArray = () => {
-    console.log('This is running')
     let dateArray = [];
     let newDate = moment();
     Object.keys(schedule).forEach(item => {
       newDate = newDate.clone().add(schedule[item][0], 'days');
       dateArray.push([newDate, schedule[item][1], 'Automatically generated']);
     });
-    console.log('Date Array is ', dateArray)
-    this.props.dispatch(stateUpdateUpcomingEvents(dateArray));
-    console.log('Props.leads.upcomingEvents is ', this.props.leads.upcomingEvents)
-    // return dateArray;
+    return dateArray;
   }
 
 render() {
-  console.log('Line 55', this.props.leads.upcomingEvents)
-  const eventCells = this.props.leads.upcomingEvents.map(event => {
+  if (!this.props.upcomingEvents) {
+    return null;
+  }
+  const eventCells = this.props.upcomingEvents.map(event => {
     return (
       /*
         A note on React.Fragment:

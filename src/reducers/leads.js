@@ -44,8 +44,9 @@ export default function reducer(state = initialState, action) {
 
   });
   } else if (action.type === STATE_UPDATE_UPCOMING_EVENTS) {
+    console.log('reducer', action)
     return Object.assign({}, state, {
-      upcomingEvents: [...action.upcomingEvents]
+      upcomingEvents: action.upcomingEvents
 
   });
   }
