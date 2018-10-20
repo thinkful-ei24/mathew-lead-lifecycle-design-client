@@ -37,51 +37,78 @@ class LeadGrid extends React.Component {
           https://reactjs.org/docs/fragments.html
         */
         <React.Fragment key={x.firstName + x.lastName}>
-            <div className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
-              {x.firstName}
+          {/* <div className="overall-container"> */}
+            <div className="container-left"> 
+              <div className="cell header firstName">First Name</div>
+              <div className="cell header lastName">Last Name</div>
+              <div className="cell header lastContactedDate">Last Contacted Date</div>
+              <div className="cell header mobilePhoneNumber">Mobile #</div>
+              <div className="cell header homePhoneNumber">Home #</div>
+              <div className="cell header email">Email Address</div>
+              <div className="cell header nextScheduledEvent">Next Scheduled Event</div>
             </div>
-            <div className={`cell lastName ${selected}`} onClick={e => this.leadClicked(x.id)}>
-              {x.lastName}
+
+            <div className="container-right">
+              <div className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
+                {x.firstName}
+              </div>
+              <div className={`cell lastName ${selected}`} onClick={e => this.leadClicked(x.id)}>
+                {x.lastName}
+              </div>
+              <div className={`cell lastContactedDate ${selected}`} onClick={e => this.leadClicked(x.id)}>
+                {moment(x.updatedAt).format('MM-DD-YYYY')}
+              </div>
+              <div className={`cell mobilePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
+                {x.mobilePhoneNumber}
+              </div>
+              <div className={`cell homePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
+                {x.homePhoneNumber}
+              </div>
+              <div className={`cell emailAddress ${selected}`} onClick={e => this.leadClicked(x.id)}>
+                {x.emailAddress}
+              </div>
+              <div className={`cell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
+                {x.nextScheduledEvent}
+              </div>
             </div>
-            <div className={`cell lastContactedDate ${selected}`} onClick={e => this.leadClicked(x.id)}>
-              {moment(x.updatedAt).format('MM-DD-YYYY')}
-            </div>
-            <div className={`cell mobilePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
-              {x.mobilePhoneNumber}
-            </div>
-            <div className={`cell homePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
-              {x.homePhoneNumber}
-            </div>
-            <div className={`cell emailAddress ${selected}`} onClick={e => this.leadClicked(x.id)}>
-              {x.emailAddress}
-            </div>
-            <div className={`cell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
-              {x.nextScheduledEvent}
-            </div>
+          {/* </div> */}
 
         </React.Fragment>
     )});
-    let headerCells = (
-        <React.Fragment>
-          <div className="cell header firstName">First Name</div>
-            <div className="cell header lastName">Last Name</div>
-            <div className="cell header lastContactedDate">Last Contacted <br />Date</div>
-            <div className="cell header mobilePhoneNumber">Mobile #</div>
-            <div className="cell header homePhoneNumber">Home #</div>
-            <div className="cell header email">Email Address</div>
-            <div className="cell header nextScheduledEvent">Next Scheduled Event</div>
-        </React.Fragment>
-      );
+    // let headerCells = (
+    //     <React.Fragment>
+    //       <div className="cell header firstName">First Name</div>
+    //         <div className="cell header lastName">Last Name</div>
+    //         <div className="cell header lastContactedDate">Last Contacted <br />Date</div>
+    //         <div className="cell header mobilePhoneNumber">Mobile #</div>
+    //         <div className="cell header homePhoneNumber">Home #</div>
+    //         <div className="cell header email">Email Address</div>
+    //         <div className="cell header nextScheduledEvent">Next Scheduled Event</div>
+    //     </React.Fragment>
+    //   );
     
     return (
-        <div className="leadgrid">
-          {headerCells}
+        <div className="overall-container">
+          {/* {headerCells} */}
           {leadCells}
             
         </div>
     );    
   }
 }
+
+//Plan: Use https://www.npmjs.com/package/react-media
+//If lower than 700px, render above set
+//If higher than 700px, render as we had it before
+
+// if lower than 700px: 
+//  return as above
+
+// If higher than 700px:
+//  return as before
+
+//That way, you're not creating a whole bunch of components you don't need!
+
 
 function mapStateToProps(state) {
   return {
