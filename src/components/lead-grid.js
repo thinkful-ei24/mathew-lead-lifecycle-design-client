@@ -109,6 +109,8 @@ class LeadGrid extends React.Component {
 
 //That way, you're not creating a whole bunch of components you don't need!
 
+//Change font sizes to make sure it doesn't get too small on resize
+
 
 function mapStateToProps(state) {
   return {
