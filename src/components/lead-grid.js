@@ -59,7 +59,7 @@ class LeadGrid extends React.Component {
               <div className={`cell emailAddress ${selected}`} onClick={e => this.leadClicked(x.id)}>
                 {x.emailAddress}
               </div>
-              <div className={`cell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              <div className={`cell lastCell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
                 {x.nextScheduledEvent}
               </div>
          
@@ -74,7 +74,7 @@ class LeadGrid extends React.Component {
             <div className="cell header mobilePhoneNumber">Mobile #</div>
             <div className="cell header homePhoneNumber">Home #</div>
             <div className="cell header email">Email Address</div>
-            <div className="cell header nextScheduledEvent">Next Scheduled Event</div>
+            <div className="cell header lastCell nextScheduledEvent">Next Scheduled Event</div>
         </React.Fragment>
       );
       
@@ -108,7 +108,7 @@ class LeadGrid extends React.Component {
                 <div className="cell header mobilePhoneNumber">Mobile #</div>
                 <div className="cell header homePhoneNumber">Home #</div>
                 <div className="cell header email">Email Address</div>
-                <div className="cell header nextScheduledEvent">Next Scheduled Event</div>
+                <div className="cell header lastCell nextScheduledEvent">Next Scheduled Event</div>
               </div>
   
               <div className="container-right">
@@ -130,7 +130,7 @@ class LeadGrid extends React.Component {
                 <div className={`cell emailAddress ${selected}`} onClick={e => this.leadClicked(x.id)}>
                   {x.emailAddress}
                 </div>
-                <div className={`cell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
+                <div className={`cell lastCell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
                   {x.nextScheduledEvent}
                 </div>
               </div>
@@ -146,12 +146,16 @@ class LeadGrid extends React.Component {
               <div className="cell header mobilePhoneNumber">Mobile #</div>
               <div className="cell header homePhoneNumber">Home #</div>
               <div className="cell header email">Email Address</div>
-              <div className="cell header nextScheduledEvent">Next Scheduled Event</div>
+              <div className="cell header lastCell nextScheduledEvent">Next Scheduled Event</div>
           </React.Fragment>
         );
     
     return (
-        
+        //Plan: Use https://www.npmjs.com/package/react-media
+        //If lower than 700px, render a pivoted table
+        //If higher than 700px, render a normal table
+        //That way, you're not creating a whole bunch of components 
+        //  you don't need!
        <Media query="(max-width: 700px)">
           {matches =>
             matches ? (
@@ -166,26 +170,9 @@ class LeadGrid extends React.Component {
             )
           }
         </Media>
-          
-            
     );    
   }
 }
-
-//Plan: Use https://www.npmjs.com/package/react-media
-//If lower than 700px, render above set
-//If higher than 700px, render as we had it before
-
-// if lower than 700px: 
-//  return as above
-
-// If higher than 700px:
-//  return as before
-
-//That way, you're not creating a whole bunch of components you don't need!
-
-//Change font sizes to make sure it doesn't get too small on resize
-
 
 function mapStateToProps(state) {
   return {
