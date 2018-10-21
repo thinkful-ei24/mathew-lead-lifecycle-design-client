@@ -152,7 +152,7 @@ class LeadGrid extends React.Component {
     
     return (
         
-       <Media query="(max-width: 599px)">
+       <Media query="(max-width: 700px)">
           {matches =>
             matches ? (
               <div className="overall-container">
