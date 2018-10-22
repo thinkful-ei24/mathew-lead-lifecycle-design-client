@@ -112,11 +112,13 @@ export class CreateLead extends React.Component {
                     name="emailAddress"
                   />
 
-                  <label htmlFor="leadNotes">Notes</label>
+                  <label htmlFor="leadNotes" className='leadLabelFormNotes'>Notes</label>
+                  <br />
                   <Field
                     component="textarea"
                     type="textarea"
                     name="leadNotes"
+                    className='leadFieldFormNotes'
                     rows="3"
                     cols="25"
                   />
