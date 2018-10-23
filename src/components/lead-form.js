@@ -128,12 +128,12 @@ export class CreateLead extends React.Component {
             <LeadUpcomingEvent />
             <LeadFutureUpcomingEvent />
             <section className="buttons">
-            <Link to="/dashboard">
-              <button>
+            <Link to="/dashboard" tabindex="-1">
+              <button tabindex="0">
                 Back to Dashboard
               </button>
             </Link>
-              <button
+              <button tabindex='0'
                 type="submit"
                 disabled={this.props.pristine || this.props.submitting}>
                   Save Lead

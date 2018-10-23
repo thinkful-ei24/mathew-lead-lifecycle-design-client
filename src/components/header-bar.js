@@ -1,8 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../utils/local-storage';
+import { IoMdPerson } from 'react-icons/io';
+import { IconContext } from "react-icons";
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -15,7 +18,13 @@ export class HeaderBar extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log Out</button>
+              <IconContext.Provider value={{ size: '2em', className:"user-icon" }}>
+                <section className='signOutArea'>
+                  <IoMdPerson />
+                  <Link to="/" onClick={() => this.logOut()}>Sign Out</Link>
+                </section>
+              </IconContext.Provider>
+              
             );
         }
         return (
