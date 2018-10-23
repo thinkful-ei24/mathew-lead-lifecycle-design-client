@@ -195,6 +195,17 @@ button:active {
     padding-left: 11px;
 }
 
+.Modal {
+  position: absolute;
+  top: 224px;
+  left: 110px;
+  right: 110px;
+  bottom: 40px;
+  padding: 10px;
+  background-color: rgb(250, 242, 229);
+}
+
+
 @media screen and (max-width: 450px) {
   .navBar {
     justify-content: space-between;
