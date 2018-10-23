@@ -7,9 +7,6 @@ import {fetchAllLeads} from '../actions/dashboard';
 import {dashboardHelpModalOff} from '../actions/auth';
 import LeadGrid from './lead-grid'
 
-// ReactModal.setAppElement('flexcontainer')
-
-
 class Dashboard extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchAllLeads());

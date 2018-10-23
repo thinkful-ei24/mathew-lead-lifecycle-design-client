@@ -37,7 +37,7 @@ export class CreateLead extends React.Component {
         this.props.dispatch(notifSend({
           message: 'Your New Lead was Saved!',
           kind: 'info',
-          dismissAfter: 3000
+          dismissAfter: 15000
         }));
         
     }
@@ -128,12 +128,12 @@ export class CreateLead extends React.Component {
             <LeadUpcomingEvent />
             <LeadFutureUpcomingEvent />
             <section className="buttons">
-            <Link to="/dashboard" tabindex="-1">
-              <button tabindex="0">
+            <Link to="/dashboard" tabIndex="-1">
+              <button tabIndex="0">
                 Back to Dashboard
               </button>
             </Link>
-              <button tabindex='0'
+              <button tabIndex='0'
                 type="submit"
                 disabled={this.props.pristine || this.props.submitting}>
                   Save Lead
