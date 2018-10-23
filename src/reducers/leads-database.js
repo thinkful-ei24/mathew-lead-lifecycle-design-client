@@ -6,7 +6,8 @@ import {
 
 const initialState = {
   data: '',
-  error: null
+  error: null,
+  
 };
 //refactor this so that it's not just protected-data
 export default function reducer(state = initialState, action) {

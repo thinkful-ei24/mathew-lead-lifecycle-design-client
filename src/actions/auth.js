@@ -33,12 +33,34 @@ export const authError = error => ({
     error
 });
 
+export const NEEDS_DASHBOARD_HELP_ON = 'NEEDS_DASHBOARD_HELP_ON';
+export const dashboardHelpModalOn = () => ({
+    type: NEEDS_DASHBOARD_HELP_ON
+});
+
+export const NEEDS_DASHBOARD_HELP_OFF = 'NEEDS_DASHBOARD_HELP_OFF';
+export const dashboardHelpModalOff = () => ({
+    type: NEEDS_DASHBOARD_HELP_OFF
+});
+
+export const NEEDS_CREATE_LEAD_HELP_ON = 'NEEDS_CREATE_LEAD_HELP_ON';
+export const createLeadHelpModalOn = () => ({
+    type: NEEDS_CREATE_LEAD_HELP_ON
+});
+
+export const NEEDS_CREATE_LEAD_HELP_OFF = 'NEEDS_CREATE_LEAD_HELP_OFF';
+export const createLeadHelpModalOff = () => ({
+    type: NEEDS_CREATE_LEAD_HELP_OFF
+});
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
+    dispatch(dashboardHelpModalOn())
+    dispatch(createLeadHelpModalOn())
     saveAuthToken(authToken);
 };
 
