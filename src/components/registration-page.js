@@ -15,7 +15,7 @@ export function RegistrationPage(props) {
           <section className="registrationBox drop-shadow">  
             <h2>Signup Form</h2>
             <RegistrationForm />
-            <Link to="/">Login</Link>
+            <Link to="/">Back to Login</Link>
           </section>
         </div>
     );

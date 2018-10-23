@@ -190,6 +190,10 @@ button:active {
   background-color: #f5f5f5;
 }
 
+.registrationBox a {
+  margin-top: 11px;
+    padding-left: 11px;
+}
 
 @media screen and (max-width: 450px) {
   .navBar {

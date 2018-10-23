@@ -28,8 +28,12 @@
   grid-row: 1 / span 2;
 }
 
+.lead-container-future div {
+  margin-top: 19px;
+}
+
 .leadNextUpcomingEvent {
-  font-size: 70%;
+  font-size: 90%;
   border: 1px solid black;
   border-radius: 10px;
   padding: 5px;
@@ -38,15 +42,27 @@
 .leadFutureUpcomingEvent {
   grid-column: 1;
   grid-row: 2;
-  font-size: 70%;
+  font-size: 90%;
   border-radius: 10px;
   padding: 5px;
   display: grid;
   border: 1px solid black;
-  grid-template-columns: 50px 110px auto 80px;
+  grid-template-columns: 100px 154px auto 105px;
 }
 
-@media screen and (max-width: 820px) {
+input {
+  border-radius: 5px;
+  height: 1.3em;
+  border: 1px solid black;
+  margin-bottom: 6px;
+}
+
+textarea {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 920px) {
   .createLead-form {
     grid-template-columns: 1fr;
   }
@@ -69,12 +85,12 @@
   }
 
   .leadFutureUpcomingEvent {
-    grid-template-columns: 50px 110px 80px;
-    width: 90%;
+    grid-template-columns: 100px auto 105px;
+    width: 86%;
   }
 
   .leadNextUpcomingEvent {
-    width: 90%;
+    width: 86%;
   }
 
   .leadFutureUpcomingEvent > .notes {
@@ -85,4 +101,15 @@
     justify-content: center;
   }
 
+  .lead-container-future div {
+    margin-top: 0;
+  }
+
+}
+
+@media screen and (max-width: 920px) {
+  .leadFutureUpcomingEvent {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 86%;
+  }
 }
