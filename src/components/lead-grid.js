@@ -12,7 +12,7 @@ const moment = require('moment');
 
 
 
-class LeadGrid extends React.Component {
+export class LeadGrid extends React.Component {
   //Goal of this is to click on a row, then it opens a lead viewer
   leadClicked(id) {
     this.props.dispatch(fetchAllLeads(id));

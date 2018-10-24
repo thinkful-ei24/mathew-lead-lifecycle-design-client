@@ -7,7 +7,7 @@ import {fetchAllLeads} from '../actions/dashboard';
 import {dashboardHelpModalOff} from '../actions/auth';
 import LeadGrid from './lead-grid'
 
-class Dashboard extends React.Component {
+export class Dashboard extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchAllLeads());
     }
@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
                 <h1>Hello! Welcome to the Lead Lifecycle Designer!</h1>
                 <p>The <strong>Lead Dashboard</strong> link will bring you to this page.</p>
                 <p>The <strong>Create New Lead</strong> link will bring you to the Create Lead page.</p>
-                <button onClick={() => this.props.dispatch(dashboardHelpModalOff())}>Thanks!</button>
+                <button type='submit' onClick={() => this.props.dispatch(dashboardHelpModalOff())}>Thanks!</button>
               </ReactModal>
             </section>
           </section>
@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
       } else {
         return (
           <section>
-            Loading data...
+            Loading data...{!this.props.dashboard.data}
           </section>
         )
       }

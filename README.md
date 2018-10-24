@@ -1,9 +1,28 @@
 # Lead Lifecycle Designer
 ### by Matt Williamson
 
+## Relevant Links
+- Text goes here
+
 ## How to Use
 - Text goes here
 - Username and Password for demo
+
+## Technology Stack
+# Front End - Web
+- React
+- Redux
+- HTML
+- CSS
+- Enzyme
+- Jest
+# Back End - Web & Mobile
+- Node
+- Express
+- Mongoose
+- MongoDB
+- Mocha
+- Chai
 
 ## MVP
 - Text here
