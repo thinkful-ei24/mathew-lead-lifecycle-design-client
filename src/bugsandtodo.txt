@@ -1,7 +1,0 @@
-TODO
--BUG SERVER: leads router => needs to be able to search for phone number
--BUG SERVER: Notes does not submit to Database
--BUG CLIENT: Save Lead should go to dashboard On Success
--BUG CLIENT: Find a better way to handle Log Out button (Hamburger? Little person icon? X?)
--BUG CLIENT: Create Client Side validation for phones and emails
--BUG CLIENT: Make better styling for NavBar

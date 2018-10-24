@@ -1,9 +1,9 @@
 import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import {reducer as formReducer} from 'redux-form';
 import thunk from 'redux-thunk';
+
 import {loadAuthToken} from './utils/local-storage';
 import authReducer from './reducers/auth';
-import protectedDataReducer from './reducers/protected-data';
 import leadsReducer from './reducers/leads';
 import dashboardReducer from './reducers/dashboard'
 import {setAuthToken, refreshAuthToken} from './actions/auth';
@@ -15,7 +15,6 @@ const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
-        protectedData: protectedDataReducer,
         leads: leadsReducer,
         notifs: notifReducer,
         dashboard: dashboardReducer

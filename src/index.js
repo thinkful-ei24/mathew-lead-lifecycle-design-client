@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import { Notifs } from 'redux-notifications';
+
 import store from './store';
-import './css/index.css';
-import './css/main.css';
-import './css/notifications.css';
 import App from './components/app';
 import * as serviceWorker from './serviceWorker';
+
+import './css/index.css';
+import './css/notifications.css';
 
 ReactDOM.render(
   <Provider store={store}>

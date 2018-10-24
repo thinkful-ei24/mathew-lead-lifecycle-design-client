@@ -2,9 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import ReactModal from 'react-modal';
+
 import {createLeadHelpModalOff} from '../actions/auth';
-
-
 import LeadForm from './lead-form';
 
 export function LeadPage(props) {
@@ -44,7 +43,7 @@ export function LeadPage(props) {
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null,
-    leadBeingViewed: state.protectedData.leadBeingViewed,
+    leadBeingViewed: state.leads.leadBeingViewed,
     createLeadHelpModal: state.auth.needsCreateLeadHelpModal
 });
 
