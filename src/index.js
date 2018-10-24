@@ -13,12 +13,12 @@ import './css/notifications.css';
 
 ReactDOM.render(
   <Provider store={store}>
-    <div>
+    <section>
       <Router>
         <App />
       </Router>
       <Notifs />
-    </div>
+    </section>
   </Provider>,
    document.getElementById('root'));
 

@@ -11,14 +11,14 @@ export function LandingPage(props) {
     }
 
     return (
-        <div className="home">
+        <section className="home">
           <section className="loginBox drop-shadow">
               <h2>Welcome! Please Login.</h2>
               <LoginForm />
               <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
               {/* <p>Forgot your password?</p> */}
             </section>
-        </div>
+        </section>
     );
 }
 

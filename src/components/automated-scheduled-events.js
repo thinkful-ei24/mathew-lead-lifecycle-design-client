@@ -76,33 +76,33 @@ render() {
         https://reactjs.org/docs/fragments.html
       */
       <React.Fragment key={event.dateAndTime + event.eventType}>
-        <div className='date' >
+        <section className='date' >
           {event.dateAndTime.format("MM/DD/YY")}
-        </div>
-        <div className='eventType' >
+        </section>
+        <section className='eventType' >
           {event.eventType}
-        </div>
-        <div className='notes' >
+        </section>
+        <section className='notes' >
           {event.notes}
-        </div>
-        <div className='action' >
+        </section>
+        <section className='action' >
           Edit / Delete
-        </div>
+        </section>
       </React.Fragment>
   )});
   let headerCells = (
       <React.Fragment>
-        <div className="date"><strong>Due Date</strong></div>
-        <div className="eventType"><strong>Event Type</strong></div>
-        <div className="notes"><strong>Notes</strong></div>
-        <div className="action"><strong>Action</strong></div>
+        <section className="date"><strong>Due Date</strong></section>
+        <section className="eventType"><strong>Event Type</strong></section>
+        <section className="notes"><strong>Notes</strong></section>
+        <section className="action"><strong>Action</strong></section>
       </React.Fragment>
     );
   return (
-      <div className="leadFutureUpcomingEvent drop-shadow">
+      <section className="leadFutureUpcomingEvent drop-shadow">
         {headerCells}
         {eventCells}
-      </div>
+      </section>
   );    
 }
 }

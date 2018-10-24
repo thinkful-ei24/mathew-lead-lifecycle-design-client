@@ -28,10 +28,10 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <div className="header-bar">
+            <section className="header-bar">
                 <h1>Lead Lifecycle Designer</h1>
                 {logOutButton}
-            </div>
+            </section>
         );
     }
 }

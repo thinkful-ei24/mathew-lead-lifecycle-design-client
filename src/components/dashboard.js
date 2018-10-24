@@ -15,8 +15,8 @@ class Dashboard extends React.Component {
     render() {
       if (!this.props.dashboard.data) {
         return (
-          <div className="dashboard">
-            <div className="flexcontainer">
+          <section className="dashboard">
+            <section className="flexcontainer">
             <LeadGrid />
               <ReactModal ariaHideApp={false}
                 isOpen={this.props.dashboardHelpModal}
@@ -30,14 +30,14 @@ class Dashboard extends React.Component {
                 <p>The <strong>Create New Lead</strong> link will bring you to the Create Lead page.</p>
                 <button onClick={() => this.props.dispatch(dashboardHelpModalOff())}>Thanks!</button>
               </ReactModal>
-            </div>
-          </div>
+            </section>
+          </section>
       )
       } else {
         return (
-          <div>
+          <section>
             Loading data...
-          </div>
+          </section>
         )
       }
         

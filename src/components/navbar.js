@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom';
 
 export function NavBar(props) {
     return (
-        <div className="navBar">
+        <section className="navBar">
             <Link to="/dashboard">Lead Dashboard</Link>
             <Link to="/lead">Create New Lead</Link>
-        </div>
+        </section>
     );
 }
 

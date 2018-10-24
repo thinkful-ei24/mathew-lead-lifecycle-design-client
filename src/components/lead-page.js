@@ -13,7 +13,7 @@ export function LeadPage(props) {
         return <Redirect to="/" />;
     }
     return (
-      <div className="dashboard">
+      <section className="dashboard">
         <section className="container">
           <section className="workArea">
             <section className="leadForm">  
@@ -37,7 +37,7 @@ export function LeadPage(props) {
             </section>
           </section>           
         </section>
-      </div>
+      </section>
     );
 }
 

@@ -29,38 +29,38 @@ class LeadGrid extends React.Component {
       let selected = this.props.leadSelected === i ? 'selected' : '';
       return (
         <React.Fragment key={x.firstName + x.lastName}>
-          <div className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
+          <section className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.firstName}
-          </div>
-          <div className={`cell lastName ${selected}`} onClick={e => this.leadClicked(x.id)}>
+          </section>
+          <section className={`cell lastName ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.lastName}
-          </div>
-          <div className={`cell lastContactedDate ${selected}`} onClick={e => this.leadClicked(x.id)}>
+          </section>
+          <section className={`cell lastContactedDate ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {moment(x.updatedAt).format('MM-DD-YYYY')}
-          </div>
-          <div className={`cell mobilePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
+          </section>
+          <section className={`cell mobilePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.mobilePhoneNumber}
-          </div>
-          <div className={`cell homePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
+          </section>
+          <section className={`cell homePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.homePhoneNumber}
-          </div>
-          <div className={`cell emailAddress ${selected}`} onClick={e => this.leadClicked(x.id)}>
+          </section>
+          <section className={`cell emailAddress ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.emailAddress}
-          </div>
-          <div className={`cell lastCell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
+          </section>
+          <section className={`cell lastCell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.nextScheduledEvent}
-          </div>
+          </section>
         </React.Fragment>
     )});
     let headerCells = (
         <React.Fragment>
-          <div className="cell header firstName">First Name</div>
-            <div className="cell header lastName">Last Name</div>
-            <div className="cell header lastContactedDate">Last Contacted <br />Date</div>
-            <div className="cell header mobilePhoneNumber">Mobile #</div>
-            <div className="cell header homePhoneNumber">Home #</div>
-            <div className="cell header email">Email Address</div>
-            <div className="cell header lastCell nextScheduledEvent">Next Scheduled Event</div>
+          <section className="cell header firstName">First Name</section>
+          <section className="cell header lastName">Last Name</section>
+          <section className="cell header lastContactedDate">Last Contacted <br />Date</section>
+          <section className="cell header mobilePhoneNumber">Mobile #</section>
+          <section className="cell header homePhoneNumber">Home #</section>
+          <section className="cell header email">Email Address</section>
+          <section className="cell header lastCell nextScheduledEvent">Next Scheduled Event</section>
         </React.Fragment>
       );
       
@@ -86,39 +86,39 @@ class LeadGrid extends React.Component {
           */
          
           <React.Fragment key={x.firstName + x.lastName}>
-            <div className="container-left"> 
-              <div className="cell header firstName">First Name</div>
-              <div className="cell header lastName">Last Name</div>
-              <div className="cell header lastContactedDate">Last Contacted Date</div>
-              <div className="cell header mobilePhoneNumber">Mobile #</div>
-              <div className="cell header homePhoneNumber">Home #</div>
-              <div className="cell header email">Email Address</div>
-              <div className="cell header lastCell nextScheduledEvent">Next Scheduled Event</div>
-            </div>
+            <section className="container-left"> 
+              <section className="cell header firstName">First Name</section>
+              <section className="cell header lastName">Last Name</section>
+              <section className="cell header lastContactedDate">Last Contacted Date</section>
+              <section className="cell header mobilePhoneNumber">Mobile #</section>
+              <section className="cell header homePhoneNumber">Home #</section>
+              <section className="cell header email">Email Address</section>
+              <section className="cell header lastCell nextScheduledEvent">Next Scheduled Event</section>
+            </section>
   
-            <div className="container-right">
-              <div className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
+            <section className="container-right">
+              <section className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
                 {x.firstName}
-              </div>
-              <div className={`cell lastName ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              </section>
+              <section className={`cell lastName ${selected}`} onClick={e => this.leadClicked(x.id)}>
                 {x.lastName}
-              </div>
-              <div className={`cell lastContactedDate ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              </section>
+              <section className={`cell lastContactedDate ${selected}`} onClick={e => this.leadClicked(x.id)}>
                 {moment(x.updatedAt).format('MM-DD-YYYY')}
-              </div>
-              <div className={`cell mobilePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              </section>
+              <section className={`cell mobilePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
                 {x.mobilePhoneNumber}
-              </div>
-              <div className={`cell homePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              </section>
+              <section className={`cell homePhoneNumber ${selected}`} onClick={e => this.leadClicked(x.id)}>
                 {x.homePhoneNumber}
-              </div>
-              <div className={`cell emailAddress ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              </section>
+              <section className={`cell emailAddress ${selected}`} onClick={e => this.leadClicked(x.id)}>
                 {x.emailAddress}
-              </div>
-              <div className={`cell lastCell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
+              </section>
+              <section className={`cell lastCell nextScheduledEvent ${selected}`} onClick={e => this.leadClicked(x.id)}>
                 {x.nextScheduledEvent}
-              </div>
-            </div>
+              </section>
+            </section>
           </React.Fragment>
       )});
     
@@ -131,14 +131,14 @@ class LeadGrid extends React.Component {
        <Media query="(max-width: 700px)">
           {matches =>
             matches ? (
-              <div className="overall-container">
+              <section className="overall-container">
                 {leadCellsSmall}
-              </div>
+              </section>
             ) : (
-              <div className="overall-container">
+              <section className="overall-container">
                 {headerCells}
                 {leadCells}
-              </div>
+              </section>
             )
           }
         </Media>

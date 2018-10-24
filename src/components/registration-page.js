@@ -11,13 +11,13 @@ export function RegistrationPage(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <div className="home">
+        <section className="home">
           <section className="registrationBox drop-shadow">  
             <h2>Signup Form</h2>
             <RegistrationForm />
             <Link to="/">Back to Login</Link>
           </section>
-        </div>
+        </section>
     );
 }
 

@@ -44,14 +44,14 @@ export class App extends React.Component {
 
     render() {
         return (
-            <div className="app">
+            <section className="app">
                 <HeaderBar />
                 <NavBar />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/lead" component={LeadPage} />
                 <Route exact path="/register" component={RegistrationPage} />
-            </div>
+            </section>
         );
     }
 }
