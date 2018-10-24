@@ -1,6 +1,12 @@
-## MVP
+#Lead Lifecycle Designer
+###by Matt Williamson
 
-# Test
+##MVP
+- Text here
+- Remember that we just started learning React and Redux two weeks ago.
 
-### Three Hashes
-- Test
+##Post MVP Stretch Goals
+- Text goes here
+
+##Further Future Plans
+- Text goes here
