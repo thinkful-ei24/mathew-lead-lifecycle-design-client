@@ -14,7 +14,6 @@
   padding: 10px;
   min-height: 10vh;
   width: 85%;
-  /* TODO This needs to be changed somehow because it is not mobile friendly */
   min-width: 700px;
   border-bottom: rgb(155, 154, 154) 2px solid;
   border-right: rgb(155, 154, 154) 2px solid;
@@ -41,10 +40,6 @@
 .cell.firstName, .cell.lastName, .cell.email, .cell.id {
   grid-column: span 1;
 }
-
-/* section {
-  border:1px solid black;
-} */
 
 .selected {
   background: grey;

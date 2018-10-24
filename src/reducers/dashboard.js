@@ -12,7 +12,6 @@ const initialState = {
   editing: false
 };
 
-//refactor this so that it's not just protected-data
 export default function reducer(state = initialState, action) {
   if (action.type === FETCH_LEADS_SUCCESS) {
       return Object.assign({}, state, {

@@ -3,22 +3,22 @@ import { connect } from "react-redux";
 import Media from 'react-media';
 
 import { fetchAllLeads } from "../actions/dashboard";
+
 import '../css/index.css';
 import '../css/dashboard-grid.css';
-import '../css/responsiveTableStyle.css'
+import '../css/responsiveTableStyle.css';
+
 const moment = require('moment');
 
 
 
 class LeadGrid extends React.Component {
-
   //Goal of this is to click on a row, then it opens a lead viewer
   leadClicked(id) {
     this.props.dispatch(fetchAllLeads(id));
   }
   
   render() {
-    
     const leadCells = this.props.leads.map((x, i) => {
 
       /*

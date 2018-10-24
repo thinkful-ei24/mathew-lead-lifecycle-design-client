@@ -1,17 +1,16 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import {Link, Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import {Field, reduxForm, focus, clearSubmitErrors} from 'redux-form';
+
 import {createLead, resetLeadsState} from '../actions/leads';
-import { clearSubmitErrors } from 'redux-form';
-import '../css/index.css';
-import '../css/leads.css';
 import {LeadUpcomingEvent} from './lead-upcoming-event';
 import { actions as notifActions } from 'redux-notifications';
 import {LeadFutureUpcomingEvent} from './lead-future-upcoming-events';
-import {Link, Redirect} from 'react-router-dom';
-import { connect } from 'react-redux';
-
-//import Input from './input';
 import {required, nonEmpty, isTrimmed} from '../utils/validators';
+
+import '../css/index.css';
+import '../css/leads.css';
 
 const { notifSend } = notifActions;
 
@@ -38,8 +37,7 @@ export class CreateLead extends React.Component {
           message: 'Your New Lead was Saved!',
           kind: 'info',
           dismissAfter: 15000
-        }));
-        
+        })); 
     }
   }
   componentDidUpdate() {
@@ -150,7 +148,7 @@ function mapStateToProps(state) {
     upcomingEvents: state.leads.upcomingEvents
   }
 }
-//TODO: Make Back to Dashboard button work
+
 CreateLead = connect( mapStateToProps)(CreateLead);
 export default reduxForm({
     form: 'createlead',

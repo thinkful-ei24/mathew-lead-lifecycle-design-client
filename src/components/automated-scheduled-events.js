@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import moment from 'moment';
+
 import {stateUpdateUpcomingEvents} from '../actions/leads';
 import requiresLogin from './requires-login';
 

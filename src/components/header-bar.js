@@ -1,11 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import { IoMdPerson } from 'react-icons/io';
+import { IconContext } from "react-icons";
 
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../utils/local-storage';
-import { IoMdPerson } from 'react-icons/io';
-import { IconContext } from "react-icons";
 
 export class HeaderBar extends React.Component {
     logOut() {
