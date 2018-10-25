@@ -11,7 +11,7 @@
 - Username and Password for demo
 
 ## Technology Stack
-### Front End - Web
+#### Front End - Web
 - React
 - Redux
 - HTML
