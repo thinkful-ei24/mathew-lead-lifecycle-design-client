@@ -1,6 +1,8 @@
 # Lead Lifecycle Designer
 ### by Matt Williamson
 
+## Overview
+
 ## Relevant Links
 - Text goes here
 
@@ -9,14 +11,14 @@
 - Username and Password for demo
 
 ## Technology Stack
-# Front End - Web
+### Front End - Web
 - React
 - Redux
 - HTML
 - CSS
 - Enzyme
 - Jest
-# Back End - Web & Mobile
+### Back End - Web & Mobile
 - Node
 - Express
 - Mongoose
@@ -36,3 +38,10 @@
 
 ## Further Future Plans
 - Text goes here
+
+
+A description of your app
+A link to a deployed version
+Screenshots of your app
+A description of your tech stack
+A brief description of where each of the key parts of the project live in your codebase
