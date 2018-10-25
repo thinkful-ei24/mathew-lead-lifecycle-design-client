@@ -8,17 +8,18 @@ Right now, the MVP is to have a user be able to login, serve a basic list of lea
 
 This app was completed in two weeks with about two weeks of learning React/Redux. 
 
-## Relevant Links
-- Text goes here
-
 ## How to Use
-- Text goes here
-- Username and Password for demo
+- The client and the server are hosted on Heroku. 
+- The client is hosted at https://mathew-lead-lifecycle-client.herokuapp.com/
+- To login, you can either create a new user or use the following login: 
+- Username: demoaccount
+- Password: demopassword
 
 ## Technology Stack
 ### Front End - Web
 - React
 - Redux
+- Redux Forms
 - HTML
 - CSS
 - Enzyme
@@ -45,10 +46,9 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 - Schedule a future email to send via SendGrid.com
 - Schedule a set of future emails to send via sendgrid.com, using a timeline that the user defines
 - Schedule a text to send via undefined SMS-based system
-* Schedule a set of texts to send. Do this using a timeline that the user defines
+- Schedule a set of texts to send. Do this using a timeline that the user defines
 
 
-A description of your app
 A link to a deployed version
 Screenshots of your app
 A description of your tech stack
