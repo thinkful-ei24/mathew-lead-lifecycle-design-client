@@ -7,5 +7,4 @@ describe('<LandingPage />', () => {
       shallow(<LandingPage />);
   });
 
-
 });
