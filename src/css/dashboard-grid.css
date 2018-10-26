@@ -15,9 +15,6 @@
   min-height: 10vh;
   width: 85%;
   min-width: 700px;
-  border-bottom: rgb(155, 154, 154) 2px solid;
-  border-right: rgb(155, 154, 154) 2px solid;
-  border-left: rgb(155, 154, 154) 2px solid;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: #f5f5f5;

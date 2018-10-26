@@ -108,6 +108,7 @@ export class CreateLead extends React.Component {
                     component={renderField}
                     type="text"
                     name="emailAddress"
+                    validate={[required, nonEmpty, isTrimmed]}
                   />
 
                   <label htmlFor="leadNotes" className='leadLabelFormNotes'>Notes</label>
