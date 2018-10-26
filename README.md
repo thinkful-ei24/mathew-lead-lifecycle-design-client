@@ -52,4 +52,4 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 - Schedule a set of texts to send. Do this using a timeline that the user defines
 
 ## Screenshots
-![Alt text](../screenshots/LoginScreen.png?raw=true "Optional Title")
+![Alt text](https://raw.githubusercontent.com/thinkful-ei24/mathew-lead-lifecycle-design-client/master/screenshots/CreateLead.png "Optional Title")
