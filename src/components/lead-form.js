@@ -7,7 +7,7 @@ import {createLead, resetLeadsState} from '../actions/leads';
 import {LeadUpcomingEvent} from './lead-upcoming-event';
 import { actions as notifActions } from 'redux-notifications';
 import {LeadFutureUpcomingEvent} from './lead-future-upcoming-events';
-import {required, nonEmpty, isTrimmed} from '../utils/validators';
+import {required, nonEmpty, isTrimmed, phoneValidate} from '../utils/validators';
 
 import '../css/index.css';
 import '../css/leads.css';
@@ -40,12 +40,12 @@ export class CreateLead extends React.Component {
         })); 
     }
   }
-  componentDidUpdate() {
-    if (this.props.error) {
-      this.errorGenerated();
-      this.props.dispatch(clearSubmitErrors('createlead'));
+    componentDidUpdate() {
+      if (this.props.error) {
+        this.errorGenerated();
+        this.props.dispatch(clearSubmitErrors('createlead'));
+      }
     }
-  }
 
     errorGenerated() {
       return this.props.dispatch(notifSend({
@@ -88,12 +88,12 @@ export class CreateLead extends React.Component {
                     validate={[required, nonEmpty, isTrimmed]} 
                   />
 
-                  <label htmlFor="mobilePhoneNumbergit ">Mobile #</label>
+                  <label htmlFor="mobilePhoneNumber">Mobile #</label>
                   <Field
                     component={renderField}
                     type="text"
                     name="mobilePhoneNumber"
-                    validate={[required, nonEmpty, isTrimmed]}
+                    validate={[required, nonEmpty, isTrimmed, phoneValidate]}
                   />
 
                   <label htmlFor="homeNumber">Home #</label>
@@ -101,6 +101,7 @@ export class CreateLead extends React.Component {
                     component={renderField}
                     type="text"
                     name="homePhoneNumber"
+                    validate={[nonEmpty, isTrimmed, phoneValidate]}
                   />
                   
                   <label htmlFor="emailAddress">Email Address</label>
@@ -122,7 +123,6 @@ export class CreateLead extends React.Component {
                     cols="25"
                   />
                 </section>
-                
                 
             <LeadUpcomingEvent />
             <LeadFutureUpcomingEvent />

@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import { IoMdPerson } from 'react-icons/io';
 import { IconContext } from "react-icons";
+import { IoMdPerson } from 'react-icons/io';
+import { IoIosHelpCircleOutline } from 'react-icons/io';
 
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../utils/local-storage';
@@ -20,6 +21,7 @@ export class HeaderBar extends React.Component {
             logOutButton = (
               <IconContext.Provider value={{ size: '2em', className:"user-icon" }}>
                 <section className='signOutArea'>
+                  {/* <IoIosHelpCircleOutline /> */}
                   <IoMdPerson />
                   <Link to="/" onClick={() => this.logOut()}>Sign Out</Link>
                 </section>
