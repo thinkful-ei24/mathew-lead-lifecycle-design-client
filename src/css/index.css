@@ -13,6 +13,11 @@ code {
     monospace;
 }
 
+.header-bar h1 {
+  font-size: 1.8rem;
+  margin: 16px;
+}
+
 .header-bar {
   background-color: #c6d4df;
   padding: 1px 20px 1px 20px;
@@ -196,8 +201,13 @@ button:disabled {
 }
 
 .form-error {
-  color: red;
+  color: rgb(255, 0, 0);
   font-style: italic;
+}
+
+.error {
+  color: rgb(255, 0, 0);
+  padding-left: 6px;
 }
 
 .home input {
