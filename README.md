@@ -12,8 +12,8 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 - The client and the server are hosted on Heroku. 
 - The client is hosted at https://mathew-lead-lifecycle-client.herokuapp.com/
 - To login, you can either create a new user or use the following login: 
-- Username: demoaccount
-- Password: demopassword
+- _Username: demoaccount_
+- _Password: demopassword_
 
 ## Technology Stack
 ### Front End - Web
