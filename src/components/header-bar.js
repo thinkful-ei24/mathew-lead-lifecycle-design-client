@@ -30,10 +30,10 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <section className="header-bar">
+            <header className="header-bar" role="banner">
                 <h1>Lead Lifecycle Designer</h1>
                 {logOutButton}
-            </section>
+            </header>
         );
     }
 }
