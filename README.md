@@ -52,4 +52,9 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 - Schedule a set of texts to send. Do this using a timeline that the user defines
 
 ## Screenshots
-![Alt text](https://raw.githubusercontent.com/thinkful-ei24/mathew-lead-lifecycle-design-client/master/screenshots/CreateLead.png "Optional Title")
+![Login Screen of Lead Lifecycle Design App](https://raw.githubusercontent.com/thinkful-ei24/mathew-lead-lifecycle-design-client/master/screenshots/LoginScreen.png "Login Screen of Lead Lifecycle Design App")
+![Sign Up Screen of Lead Lifecycle Design App](https://raw.githubusercontent.com/thinkful-ei24/mathew-lead-lifecycle-design-client/master/screenshots/SignUpForm.png "Sign Up Screen of Lead Lifecycle Design App")
+![Dashboard Screen of Lead Lifecycle Design App](https://raw.githubusercontent.com/thinkful-ei24/mathew-lead-lifecycle-design-client/master/screenshots/Dashboard.png "Dashboard Screen of Lead Lifecycle Design App")
+![Dashboard With Help Modal Screen of Lead Lifecycle Design App](https://raw.githubusercontent.com/thinkful-ei24/mathew-lead-lifecycle-design-client/master/screenshots/DashboardWithHelpModal.png "Dashboard With Help Modal Screen of Lead Lifecycle Design App")
+![Create Lead Screen of Lead Lifecycle Design App](https://raw.githubusercontent.com/thinkful-ei24/mathew-lead-lifecycle-design-client/master/screenshots/CreateLead.png "Create Lead Screen of Lead Lifecycle Design App")
+![Create Lead With Help Modal Screen of Lead Lifecycle Design App](https://raw.githubusercontent.com/thinkful-ei24/mathew-lead-lifecycle-design-client/master/screenshots/CreateLeadWithHelpModal.png "Create Lead With Help Modal Screen of Lead Lifecycle Design App")
