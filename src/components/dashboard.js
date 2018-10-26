@@ -25,10 +25,13 @@ export class Dashboard extends React.Component {
                 onRequestClose={() => this.props.dispatch(dashboardHelpModalOff())}
                 shouldCloseOnOverlayClick={true}
               >
+              <section>
                 <h1>Hello! Welcome to the Lead Lifecycle Designer!</h1>
+                <p>This webapp was built in order to track leads in such a way to automate the lead lifecycle reaching out process. Many service businesses struggle with contacting old leads consistently. A person generally needs to hear about or from a business 8-10 times before they decide to buy so it is extremely important to reach out to leads consistently.</p>
                 <p>The <strong>Lead Dashboard</strong> link will bring you to this page.</p>
                 <p>The <strong>Create New Lead</strong> link will bring you to the Create Lead page.</p>
                 <button type='submit' onClick={() => this.props.dispatch(dashboardHelpModalOff())}>Thanks!</button>
+              </section>
               </ReactModal>
             </section>
           </section>

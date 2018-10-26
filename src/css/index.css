@@ -225,10 +225,11 @@ button:active {
 .Modal {
   position: absolute;
   top: 224px;
-  left: 110px;
-  right: 110px;
+  left: 10%;
+  right: 10%;
   bottom: 40px;
   padding: 10px;
+  overflow: scroll;
   background-color: rgb(250, 242, 229);
 }
 
