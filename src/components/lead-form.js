@@ -36,7 +36,7 @@ export class CreateLead extends React.Component {
         this.props.dispatch(notifSend({
           message: 'Your New Lead was Saved!',
           kind: 'info',
-          dismissAfter: 15000
+          dismissAfter: 3000
         })); 
     }
   }

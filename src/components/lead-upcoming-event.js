@@ -23,7 +23,8 @@ export class LeadUpcomingEvent extends React.Component {
 
                 <button
                   type="button"
-                  disabled={this.props.pristine || this.props.submitting}>
+                  disabled={true} >
+                  {/* disabled={this.props.pristine || this.props.submitting}> */}
                     Edit
                 </button>
               </section>
