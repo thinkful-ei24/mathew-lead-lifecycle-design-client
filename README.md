@@ -12,8 +12,9 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 - The client and the server are hosted on Heroku. 
 - The client is hosted at https://mathew-lead-lifecycle-client.herokuapp.com/
 - To login, you can either create a new user or use the following login: 
-- _Username: demoaccount_
-- _Password: demopassword_
+- _Username: **demoaccount**_
+- _Password: **demopassword**_
+- It is possible that the server goes to sleep on Heroku. If this happens, waiting should fix the issue. 
 
 ## Technology Stack
 ### Front End - Web
@@ -22,18 +23,14 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 - Redux Forms
 - HTML
 - CSS
-- Enzyme
-- Jest
-### Back End - Web & Mobile
+- Enzyme and Jest for testing
+### Back End - Web
 - Node
 - Express
 - Mongoose
 - MongoDB
-- Mocha
-- Chai
-
-## Known Bugs
-- Issues here
+- Passport and JWT for user authentication
+- Mocha and Chai for testing
 
 ## Post MVP Stretch Goals
 - Be able to Edit Leads
@@ -49,7 +46,5 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 - Schedule a set of texts to send. Do this using a timeline that the user defines
 
 
-A link to a deployed version
 Screenshots of your app
-A description of your tech stack
 A brief description of where each of the key parts of the project live in your codebase
