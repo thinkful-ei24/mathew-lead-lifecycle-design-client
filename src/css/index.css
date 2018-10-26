@@ -39,8 +39,17 @@ code {
   padding-right: 20px;
 }
 
+.signOutArea > a {
+  text-decoration: none;
+  color: #474747;
+  font-weight: 700;
+}
+
+.signOutArea > a:hover {
+  color: #2261f6;
+}
+
 .navBar {
-  /* background-color: #fafafa; */
   background-color: #99B0BF;
   height: 2.5em;
   display: flex;
@@ -50,16 +59,6 @@ code {
   align-items: center;
   font-size: 1.3em;
   text-decoration: none;
-}
-
-.signOutArea > a {
-  text-decoration: none;
-  color: #474747;
-  font-weight: 700;
-}
-
-.signOutArea > a:hover {
-  color: #2261f6;
 }
 
 .navBar > a {
@@ -180,10 +179,10 @@ button:disabled {
     right:10px;
     left:auto;
     -webkit-transform:skew(8deg) rotate(3deg);
-       -moz-transform:skew(8deg) rotate(3deg);
-        -ms-transform:skew(8deg) rotate(3deg);
-         -o-transform:skew(8deg) rotate(3deg);
-            transform:skew(8deg) rotate(3deg);
+    -moz-transform:skew(8deg) rotate(3deg);
+    -ms-transform:skew(8deg) rotate(3deg);
+    -o-transform:skew(8deg) rotate(3deg);
+    transform:skew(8deg) rotate(3deg);
 }
 
 .login-form {

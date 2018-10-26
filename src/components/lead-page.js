@@ -24,7 +24,7 @@ export function LeadPage(props) {
                 className="Modal"
                 onRequestClose={() => props.dispatch(createLeadHelpModalOff())}
                 shouldCloseOnOverlayClick={true}
-              >
+              > 
                 <h1>Hello! Welcome to the Lead Lifecycle Designer!</h1>
                 <p>This webapp was built in order to track leads in such a way to automate the lead lifecycle reaching out process. Many service businesses struggle with contacting old leads consistently. A person generally needs to hear about or from a business 8-10 times before they decide to buy so it is extremely important to reach out to leads consistently.</p>
                 <p>The <strong>First Name</strong>, <strong>Last Name</strong>, and the <strong>Mobile #</strong> are all required.</p>
