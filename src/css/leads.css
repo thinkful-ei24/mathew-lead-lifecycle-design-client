@@ -35,7 +35,6 @@
 .leadNextUpcomingEvent {
   font-size: 90%;
   border: 1px solid black;
-  border-radius: 10px;
   padding: 5px;
 }
 
@@ -43,7 +42,6 @@
   grid-column: 1;
   grid-row: 2;
   font-size: 90%;
-  border-radius: 10px;
   padding: 5px;
   display: grid;
   border: 1px solid black;

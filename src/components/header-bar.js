@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import { IconContext } from "react-icons";
 import { IoMdPerson } from 'react-icons/io';
-import { IoIosHelpCircleOutline } from 'react-icons/io';
+// import { IoIosHelpCircleOutline } from 'react-icons/io';
 
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../utils/local-storage';
