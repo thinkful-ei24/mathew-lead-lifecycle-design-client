@@ -32,6 +32,12 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 - Passport and JWT for user authentication
 - Mocha and Chai for testing
 
+## Description of the App
+- All components are in the Client Component folder, all CSS is in the css folder, all actions are in the actions folder, and all reducers are in the reducers folder
+- When a user logs in, they go through the login-form component then it validates their authorization using JWTs. Then it adds their authentication information to local storage (utils/local-storage) and finally automatically logs them in, directing them to the dashboard.
+- The Dashboard page (Dashboard component) loads the HeaderBar component, then the NavBar component, then the LeadGrid component loads in the main area. 
+- The Create Lead page (CreateLead component) loads the HeaderBar component, then the NavBar component, then the LeadForm component loads. The LeadForm has sub-components such as the LeadUpcomingEvent component and the LeadFutureUpcomingEvent component. This form is made using redux-forms then it updates the database and re-serves the dashboard. 
+
 ## Post MVP Stretch Goals
 - Be able to Edit Leads
 - Be able to View Leads
@@ -47,4 +53,3 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 
 
 Screenshots of your app
-A brief description of where each of the key parts of the project live in your codebase
