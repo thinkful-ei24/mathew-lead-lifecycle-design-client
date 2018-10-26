@@ -51,5 +51,5 @@ This app was completed in two weeks with about two weeks of learning React/Redux
 - Schedule a text to send via undefined SMS-based system
 - Schedule a set of texts to send. Do this using a timeline that the user defines
 
-
-Screenshots of your app
+## Screenshots
+![Alt text](../screenshots/LoginScreen.png?raw=true "Optional Title")
