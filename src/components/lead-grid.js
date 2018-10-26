@@ -28,7 +28,7 @@ export class LeadGrid extends React.Component {
       */
       let selected = this.props.leadSelected === i ? 'selected' : '';
       return (
-        <React.Fragment key={x.firstName + x.lastName}>
+        <React.Fragment key={x.firstName + x.lastName + x.updatedAt}>
           <section className={`cell firstName ${selected}`} onClick={e => this.leadClicked(x.id)}>
             {x.firstName}
           </section>
@@ -85,7 +85,7 @@ export class LeadGrid extends React.Component {
             https://reactjs.org/docs/fragments.html
           */
          
-          <React.Fragment key={x.firstName + x.lastName}>
+          <React.Fragment key={x.firstName + x.lastName + x.updatedAt}>
             <section className="container-left"> 
               <section className="cell header firstName">First Name</section>
               <section className="cell header lastName">Last Name</section>

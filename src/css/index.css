@@ -13,6 +13,7 @@ code {
     monospace;
 }
 
+/* Component: Header Bar */
 .header-bar h1 {
   font-size: 1.8rem;
   margin: 16px;
@@ -48,6 +49,9 @@ code {
 .signOutArea > a:hover {
   color: #2261f6;
 }
+
+
+/* Component: NavBar */
 
 .navBar {
   background-color: #99B0BF;
@@ -92,6 +96,7 @@ code {
   transform: scaleX(1);
 }
 
+/* Components: All Main Screens */
 .home {
   display: flex;
   flex: 1;

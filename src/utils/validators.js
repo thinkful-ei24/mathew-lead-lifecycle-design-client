@@ -32,3 +32,7 @@ export const phoneValidate = phoneNumber => {
   let digits = phoneNumber.replace(/\D/g, "");
   return phoneRe.test(digits) === true ? undefined : "Phone number is not valid";
 }
+
+export const changePhoneNumber = phoneNumber => {
+  
+}
